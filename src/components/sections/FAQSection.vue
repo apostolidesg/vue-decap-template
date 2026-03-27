@@ -1,12 +1,12 @@
 <template>
-  <section class="faq section" id="faq">
+  <section class="faq section section--surface" id="faq">
     <div class="container">
 
       <!-- Section Header -->
-      <div class="faq__header">
-        <span class="faq__subtitle">{{ subtitle }}</span>
-        <h2 class="faq__title">{{ title }}</h2>
-        <p v-if="description" class="faq__description">{{ description }}</p>
+      <div class="section-header">
+        <span class="section-header__eyebrow">{{ subtitle }}</span>
+        <h2 class="section-header__title">{{ title }}</h2>
+        <p v-if="description" class="section-header__description">{{ description }}</p>
       </div>
 
       <!-- Accordion Items -->
@@ -80,42 +80,6 @@ function toggleItem(itemIndex) {
 
 <style lang="scss" scoped>
 .faq {
-  background: var(--color-background);
-
-  &__header {
-    text-align: center;
-    max-width: 640px;
-    margin: 0 auto var(--space-16);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-4);
-  }
-
-  &__subtitle {
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-semibold);
-    color: var(--color-primary);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
-
-  &__title {
-    font-size: var(--font-size-4xl);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-text-primary);
-    line-height: var(--line-height-tight);
-
-    @media (max-width: 768px) {
-      font-size: var(--font-size-3xl);
-    }
-  }
-
-  &__description {
-    font-size: var(--font-size-lg);
-    color: var(--color-text-secondary);
-    line-height: var(--line-height-relaxed);
-  }
-
   &__list {
     max-width: 760px;
     margin: 0 auto;

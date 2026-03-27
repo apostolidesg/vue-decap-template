@@ -1,12 +1,12 @@
 <template>
-  <section class="contact section" id="contact">
+  <section class="contact section section--white" id="contact">
     <div class="container contact__inner">
 
       <!-- Left Column — info -->
       <div class="contact__info">
-        <span class="contact__subtitle">{{ subtitle }}</span>
-        <h2 class="contact__title">{{ title }}</h2>
-        <p class="contact__description">{{ description }}</p>
+        <span class="section-header__eyebrow">{{ subtitle }}</span>
+        <h2 class="section-header__title">{{ title }}</h2>
+        <p class="section-header__description">{{ description }}</p>
 
         <div class="contact__details">
           <a
@@ -196,8 +196,6 @@ defineProps({
 
 <style lang="scss" scoped>
 .contact {
-  background: var(--color-surface);
-
   &__inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -215,31 +213,6 @@ defineProps({
     display: flex;
     flex-direction: column;
     gap: var(--space-4);
-  }
-
-  &__subtitle {
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-semibold);
-    color: var(--color-primary);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
-
-  &__title {
-    font-size: var(--font-size-4xl);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-text-primary);
-    line-height: var(--line-height-tight);
-
-    @media (max-width: 768px) {
-      font-size: var(--font-size-3xl);
-    }
-  }
-
-  &__description {
-    font-size: var(--font-size-base);
-    color: var(--color-text-secondary);
-    line-height: var(--line-height-relaxed);
   }
 
   &__details {

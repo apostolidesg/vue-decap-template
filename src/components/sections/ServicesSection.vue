@@ -1,12 +1,12 @@
 <template>
-  <section class="services section" id="services">
+  <section class="services section section--surface" id="services">
     <div class="container">
 
       <!-- Section Header -->
-      <div class="services__header">
-        <span class="services__subtitle">{{ subtitle }}</span>
-        <h2 class="services__title">{{ title }}</h2>
-        <p v-if="description" class="services__description">{{ description }}</p>
+      <div class="section-header">
+        <span class="section-header__eyebrow">{{ subtitle }}</span>
+        <h2 class="section-header__title">{{ title }}</h2>
+        <p v-if="description" class="section-header__description">{{ description }}</p>
       </div>
 
       <!-- Services Grid -->
@@ -71,42 +71,6 @@ const gridColumnClass = computed(() => `services__grid--cols-${props.columns}`)
 
 <style lang="scss" scoped>
 .services {
-  background: var(--color-surface);
-
-  &__header {
-    text-align: center;
-    max-width: 640px;
-    margin: 0 auto var(--space-16);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-4);
-  }
-
-  &__subtitle {
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-semibold);
-    color: var(--color-primary);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
-
-  &__title {
-    font-size: var(--font-size-4xl);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-text-primary);
-    line-height: var(--line-height-tight);
-
-    @media (max-width: 768px) {
-      font-size: var(--font-size-3xl);
-    }
-  }
-
-  &__description {
-    font-size: var(--font-size-lg);
-    color: var(--color-text-secondary);
-    line-height: var(--line-height-relaxed);
-  }
-
   &__grid {
     display: grid;
     gap: var(--space-8);
