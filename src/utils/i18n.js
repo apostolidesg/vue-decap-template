@@ -1,17 +1,18 @@
 import { createI18n } from 'vue-i18n'
-import clientConfig from '../../client-config.js'
+import { useClientConfig } from '@/composables/useClientConfig'
 
 // Dynamically import all message files for configured languages
 async function loadMessages() {
+  const { config } = useClientConfig()
   const messages = {}
 
-  for (const locale of clientConfig.languages) {
+  for (const localeCode of config.languages) {
     try {
-      const module = await import(`../../content/${locale}/index.js`)
-      messages[locale] = module.default
+      const module = await import(`../../content/${localeCode}/index.js`)
+      messages[localeCode] = module.default
     } catch (error) {
-      console.warn(`No content found for locale "${locale}"`)
-      messages[locale] = {}
+      console.warn(`No content found for locale "${localeCode}"`)
+      messages[localeCode] = {}
     }
   }
 
@@ -19,12 +20,13 @@ async function loadMessages() {
 }
 
 export async function setupI18n() {
+  const { config } = useClientConfig()
   const messages = await loadMessages()
 
   const i18n = createI18n({
     legacy: false,
-    locale: clientConfig.defaultLocale,
-    fallbackLocale: clientConfig.defaultLocale,
+    locale: config.defaultLocale,
+    fallbackLocale: config.defaultLocale,
     messages,
   })
 

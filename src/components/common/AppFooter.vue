@@ -33,13 +33,13 @@
 <script setup>
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import clientConfig from '../../../client-config.js'
+import { useClientConfig } from '@/composables/useClientConfig'
 
 // i18n
 const { t } = useI18n()
 
 // Config
-const config = clientConfig
+const { config } = useClientConfig()
 
 // Computed
 const currentYear = computed(() => new Date().getFullYear())

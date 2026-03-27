@@ -54,13 +54,13 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { RouterLink } from 'vue-router'
 import { useI18n } from 'vue-i18n'
-import clientConfig from '../../../client-config.js'
+import { useClientConfig } from '@/composables/useClientConfig'
 
 // i18n
 const { t, locale: currentLocale } = useI18n()
 
 // Config
-const config = clientConfig
+const { config } = useClientConfig()
 
 // Reactive state
 const isMobileMenuOpen = ref(false)

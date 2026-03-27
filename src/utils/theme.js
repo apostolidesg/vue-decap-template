@@ -1,7 +1,8 @@
-import clientConfig from '../../client-config.js'
+import { useClientConfig } from '@/composables/useClientConfig'
 
 export async function applyTheme() {
-  const themeName = clientConfig.theme || 'default'
+  const { config } = useClientConfig()
+  const themeName = config.theme || 'default'
 
   try {
     const themeModule = await import(`../themes/${themeName}.js`)
