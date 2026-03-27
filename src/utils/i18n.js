@@ -1,50 +1,62 @@
 import { createI18n } from 'vue-i18n'
 import { useClientConfig } from '@/composables/useClientConfig'
 
-// The list of content sections that have their own JSON file
+// Sections that have their own content JSON file in /content/
 const contentSections = ['hero', 'about', 'services', 'testimonials', 'faq', 'contact']
 
 /**
- * Loads all section JSON files for a given locale and merges them
- * into a single flat messages object.
+ * Loads all section JSON files and builds a messages object per locale.
  *
- * Each section file (e.g. hero.json) becomes a top-level key
- * in the messages object (e.g. messages.hero.title).
+ * Each file (e.g. content/hero.json) contains all locales:
+ * { "en": { "title": "..." }, "el": { "title": "..." } }
  *
- * @param {string} localeCode - The locale to load e.g. 'en' or 'el'
- * @returns {object} Merged messages object for the locale
+ * We read the correct locale key from each file and merge all
+ * sections into one flat messages object per locale.
+ *
+ * @param {string[]} locales - Array of locale codes from client config
+ * @returns {object} Messages object keyed by locale code
  */
-async function loadLocaleMessages(localeCode) {
-  const mergedMessages = {}
+async function loadAllMessages(locales) {
+  const messages = {}
 
+  // Initialise an empty object for each locale
+  for (const localeCode of locales) {
+    messages[localeCode] = {}
+  }
+
+  // Load each section file and extract the correct locale slice
   for (const sectionName of contentSections) {
     try {
-      const sectionModule = await import(
-        `../../content/${localeCode}/${sectionName}.json`
-      )
-      mergedMessages[sectionName] = sectionModule.default
+      const sectionModule = await import(`../../content/${sectionName}.json`)
+      const sectionData = sectionModule.default
+
+      for (const localeCode of locales) {
+        if (sectionData[localeCode]) {
+          messages[localeCode][sectionName] = sectionData[localeCode]
+        } else {
+          console.warn(
+            `No "${localeCode}" key found in content/${sectionName}.json`
+          )
+          messages[localeCode][sectionName] = {}
+        }
+      }
     } catch (error) {
-      console.warn(
-        `No content file found for section "${sectionName}" in locale "${localeCode}"`
-      )
-      mergedMessages[sectionName] = {}
+      console.warn(`Could not load content/${sectionName}.json`)
+      for (const localeCode of locales) {
+        messages[localeCode][sectionName] = {}
+      }
     }
   }
 
-  return mergedMessages
+  return messages
 }
 
 /**
- * Sets up vue-i18n with all configured locales.
- * Loads and merges per-section JSON files for each locale.
+ * Creates and returns the vue-i18n instance with all locale messages loaded.
  */
 export async function setupI18n() {
   const { config } = useClientConfig()
-  const messages = {}
-
-  for (const localeCode of config.languages) {
-    messages[localeCode] = await loadLocaleMessages(localeCode)
-  }
+  const messages = await loadAllMessages(config.languages)
 
   const i18n = createI18n({
     legacy: false,

@@ -1,0 +1,28 @@
+{
+  "en": {
+    "title": "About Us",
+    "subtitle": "Who we are and what drives us",
+    "body": "We are a team of dedicated professionals with years of experience delivering results for our clients. Our approach combines deep expertise with a genuine commitment to understanding your unique needs.",
+    "secondaryBody": "Based in Athens, we work with businesses across Greece and Europe, bringing modern solutions to every project we take on.",
+    "imageSrc": "",
+    "imageAlt": "About us image",
+    "stats": [
+      { "number": "10+", "label": "Years Experience" },
+      { "number": "200+", "label": "Happy Clients" },
+      { "number": "98%", "label": "Satisfaction Rate" }
+    ]
+  },
+  "el": {
+    "title": "Σχετικά με εμάς",
+    "subtitle": "Ποιοι είμαστε και τι μας οδηγεί",
+    "body": "Είμαστε μια ομάδα αφοσιωμένων επαγγελματιών με χρόνια εμπειρία στην παροχή αποτελεσμάτων για τους πελάτες μας.",
+    "secondaryBody": "Με έδρα την Αθήνα, συνεργαζόμαστε με επιχειρήσεις σε όλη την Ελλάδα και την Ευρώπη.",
+    "imageSrc": "",
+    "imageAlt": "Εικόνα σχετικά με εμάς",
+    "stats": [
+      { "number": "10+", "label": "Χρόνια Εμπειρίας" },
+      { "number": "200+", "label": "Ευχαριστημένοι Πελάτες" },
+      { "number": "98%", "label": "Ποσοστό Ικανοποίησης" }
+    ]
+  }
+}

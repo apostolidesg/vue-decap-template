@@ -1,0 +1,18 @@
+{
+  "en": {
+    "title": "Professional Services You Can Trust",
+    "subtitle": "We help businesses grow with modern, thoughtful solutions tailored to your unique needs.",
+    "primaryCta": "Get in Touch",
+    "secondaryCta": "Learn More",
+    "imageSrc": "",
+    "imageAlt": "Hero image"
+  },
+  "el": {
+    "title": "Επαγγελματικές Υπηρεσίες που Εμπιστεύεστε",
+    "subtitle": "Βοηθάμε επιχειρήσεις να αναπτυχθούν με σύγχρονες, στοχευμένες λύσεις προσαρμοσμένες στις ανάγκες σας.",
+    "primaryCta": "Επικοινωνήστε μαζί μας",
+    "secondaryCta": "Μάθετε Περισσότερα",
+    "imageSrc": "",
+    "imageAlt": "Κεντρική εικόνα"
+  }
+}

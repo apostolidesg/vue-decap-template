@@ -1,0 +1,28 @@
+{
+  "en": {
+    "title": "Our Services",
+    "subtitle": "What we offer",
+    "description": "We provide a comprehensive range of professional services designed to help your business grow and succeed.",
+    "items": [
+      { "icon": "Briefcase", "title": "Business Consulting", "description": "Strategic advice and hands-on support to help your business reach its full potential." },
+      { "icon": "BarChart2", "title": "Market Analysis", "description": "In-depth research and insights to help you understand your market and competition." },
+      { "icon": "Target", "title": "Growth Strategy", "description": "Tailored growth plans that align with your goals, resources, and timeline." },
+      { "icon": "Handshake", "title": "Client Relations", "description": "Building and maintaining strong client relationships that drive long-term success." },
+      { "icon": "Lightbulb", "title": "Innovation Planning", "description": "Future-focused strategies that keep your business ahead of the curve." },
+      { "icon": "TrendingUp", "title": "Performance Tracking", "description": "Clear metrics and reporting so you always know how your business is performing." }
+    ]
+  },
+  "el": {
+    "title": "Οι Υπηρεσίες μας",
+    "subtitle": "Τι προσφέρουμε",
+    "description": "Παρέχουμε ένα ολοκληρωμένο φάσμα επαγγελματικών υπηρεσιών σχεδιασμένων να βοηθήσουν την επιχείρησή σας να αναπτυχθεί.",
+    "items": [
+      { "icon": "Briefcase", "title": "Επιχειρηματική Συμβουλευτική", "description": "Στρατηγικές συμβουλές και υποστήριξη για να φτάσει η επιχείρησή σας στο πλήρες δυναμικό της." },
+      { "icon": "BarChart2", "title": "Ανάλυση Αγοράς", "description": "Εις βάθος έρευνα και πληροφορίες για να κατανοήσετε την αγορά και τον ανταγωνισμό σας." },
+      { "icon": "Target", "title": "Στρατηγική Ανάπτυξης", "description": "Εξατομικευμένα σχέδια ανάπτυξης που ευθυγραμμίζονται με τους στόχους και τους πόρους σας." },
+      { "icon": "Handshake", "title": "Σχέσεις Πελατών", "description": "Οικοδόμηση και διατήρηση ισχυρών σχέσεων πελατών για μακροπρόθεσμη επιτυχία." },
+      { "icon": "Lightbulb", "title": "Σχεδιασμός Καινοτομίας", "description": "Στρατηγικές με μελλοντική προοπτική που κρατούν την επιχείρησή σας μπροστά." },
+      { "icon": "TrendingUp", "title": "Παρακολούθηση Απόδοσης", "description": "Σαφείς μετρήσεις και αναφορές ώστε να γνωρίζετε πάντα την απόδοση της επιχείρησής σας." }
+    ]
+  }
+}

@@ -6,7 +6,7 @@ media_folder: public/uploads
 public_folder: /uploads
 
 i18n:
-  structure: multiple_files
+  structure: single_file
   locales: [en, el]
   default_locale: en
 
@@ -19,7 +19,7 @@ collections:
       - name: hero
         label: Hero Section
         i18n: true
-        file: content/en/hero.json
+        file: content/hero.json
         fields:
           - { label: Title, name: title, widget: string, i18n: true }
           - { label: Subtitle, name: subtitle, widget: text, i18n: true }
@@ -31,7 +31,7 @@ collections:
       - name: about
         label: About Section
         i18n: true
-        file: content/en/about.json
+        file: content/about.json
         fields:
           - { label: Title, name: title, widget: string, i18n: true }
           - { label: Subtitle, name: subtitle, widget: string, i18n: true }
@@ -50,7 +50,7 @@ collections:
       - name: services
         label: Services Section
         i18n: true
-        file: content/en/services.json
+        file: content/services.json
         fields:
           - { label: Title, name: title, widget: string, i18n: true }
           - { label: Subtitle, name: subtitle, widget: string, i18n: true }
@@ -67,7 +67,7 @@ collections:
       - name: testimonials
         label: Testimonials Section
         i18n: true
-        file: content/en/testimonials.json
+        file: content/testimonials.json
         fields:
           - { label: Title, name: title, widget: string, i18n: true }
           - { label: Subtitle, name: subtitle, widget: string, i18n: true }
@@ -85,7 +85,7 @@ collections:
       - name: faq
         label: FAQ Section
         i18n: true
-        file: content/en/faq.json
+        file: content/faq.json
         fields:
           - { label: Title, name: title, widget: string, i18n: true }
           - { label: Subtitle, name: subtitle, widget: string, i18n: true }
@@ -101,14 +101,14 @@ collections:
       - name: contact
         label: Contact Section
         i18n: true
-        file: content/en/contact.json
+        file: content/contact.json
         fields:
           - { label: Title, name: title, widget: string, i18n: true }
           - { label: Subtitle, name: subtitle, widget: string, i18n: true }
           - { label: Description, name: description, widget: text, i18n: true }
-          - { label: Name Field Placeholder, name: namePlaceholder, widget: string, i18n: true }
-          - { label: Email Field Placeholder, name: emailPlaceholder, widget: string, i18n: true }
-          - { label: Message Field Placeholder, name: messagePlaceholder, widget: string, i18n: true }
+          - { label: Name Placeholder, name: namePlaceholder, widget: string, i18n: true }
+          - { label: Email Placeholder, name: emailPlaceholder, widget: string, i18n: true }
+          - { label: Message Placeholder, name: messagePlaceholder, widget: string, i18n: true }
           - { label: Send Button Text, name: sendButton, widget: string, i18n: true }
           - { label: Success Message, name: successMessage, widget: string, i18n: true }
           - { label: Error Message, name: errorMessage, widget: string, i18n: true }
