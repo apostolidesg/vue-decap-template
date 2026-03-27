@@ -125,10 +125,12 @@ button {
   }
 }
 
-// Left-aligned variant — used when the header sits inside a two-column layout
+// Left-aligned variant — used when the header sits inside a two-column layout.
+// Overrides the default bottom margin to avoid compounding with the parent flex gap.
 .section-header--left {
   text-align: left;
   margin-left: 0;
+  margin-bottom: var(--space-8);
 }
 
 // --- Main Content Offset ---
