@@ -115,11 +115,14 @@ export default {
   },
   contact: {
     title: 'Get in Touch',
-    subtitle: 'We would love to hear from you.',
+    subtitle: 'Let\'s talk',
+    description: 'Have a project in mind or just want to explore how we can help? Fill in the form and we will get back to you within one business day.',
     namePlaceholder: 'Your Name',
     emailPlaceholder: 'Your Email',
     messagePlaceholder: 'Your Message',
     sendButton: 'Send Message',
+    successMessage: 'Thank you! Your message has been sent. We will be in touch shortly.',
+    errorMessage: 'Something went wrong. Please try again or email us directly.',
   },
   footer: {
     rights: 'All rights reserved.',

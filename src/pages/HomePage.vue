@@ -39,6 +39,17 @@
       :description="faqContent.description"
       :items="faqContent.items"
     />
+    <ContactSection
+      :title="contactContent.title"
+      :subtitle="contactContent.subtitle"
+      :description="contactContent.description"
+      :name-placeholder="contactContent.namePlaceholder"
+      :email-placeholder="contactContent.emailPlaceholder"
+      :message-placeholder="contactContent.messagePlaceholder"
+      :send-button="contactContent.sendButton"
+      :success-message="contactContent.successMessage"
+      :error-message="contactContent.errorMessage"
+    />
   </div>
 </template>
 
@@ -49,11 +60,12 @@ import AboutSection from '@/components/sections/AboutSection.vue'
 import ServicesSection from '@/components/sections/ServicesSection.vue'
 import TestimonialsSection from '@/components/sections/TestimonialsSection.vue'
 import FAQSection from '@/components/sections/FAQSection.vue'
+import ContactSection from '@/components/sections/ContactSection.vue'
 import { usePageContent } from '@/composables/usePageContent'
 import { resolveImagePath } from '@/utils/image'
 
 // All page content comes from one composable
-const { heroContent, aboutContent, servicesContent, testimonialsContent, faqContent } = usePageContent()
+const { heroContent, aboutContent, servicesContent, testimonialsContent, faqContent, contactContent } = usePageContent()
 
 // Placeholder hero image until client provides their own via CMS
 const resolvedHeroImage = computed(() =>

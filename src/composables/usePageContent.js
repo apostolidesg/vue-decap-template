@@ -66,10 +66,13 @@ export function usePageContent() {
   const contactContent = computed(() => ({
     title: t('contact.title'),
     subtitle: t('contact.subtitle'),
+    description: t('contact.description'),
     namePlaceholder: t('contact.namePlaceholder'),
     emailPlaceholder: t('contact.emailPlaceholder'),
     messagePlaceholder: t('contact.messagePlaceholder'),
     sendButton: t('contact.sendButton'),
+    successMessage: t('contact.successMessage'),
+    errorMessage: t('contact.errorMessage'),
   }))
 
   return {
