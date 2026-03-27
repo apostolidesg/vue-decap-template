@@ -20,6 +20,13 @@
       :stats="aboutContent.stats"
       image-position="left"
     />
+    <ServicesSection
+      :title="servicesContent.title"
+      :subtitle="servicesContent.subtitle"
+      :description="servicesContent.description"
+      :items="servicesContent.items"
+      :columns="3"
+    />
   </div>
 </template>
 
@@ -27,11 +34,12 @@
 import { computed } from 'vue'
 import HeroSection from '@/components/sections/HeroSection.vue'
 import AboutSection from '@/components/sections/AboutSection.vue'
+import ServicesSection from '@/components/sections/ServicesSection.vue'
 import { usePageContent } from '@/composables/usePageContent'
 import { resolveImagePath } from '@/utils/image'
 
 // All page content comes from one composable
-const { heroContent, aboutContent } = usePageContent()
+const { heroContent, aboutContent, servicesContent } = usePageContent()
 
 // Placeholder hero image until client provides their own via CMS
 const resolvedHeroImage = computed(() =>

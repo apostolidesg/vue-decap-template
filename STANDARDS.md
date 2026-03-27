@@ -246,6 +246,21 @@ items: t('services.items'),    // returns "[object Object]" or key name
 stats: t('about.stats'),       // same problem
 ```
 
+### Icons are stored as name strings in content, resolved via the icon registry
+
+CMS content stores icon names as plain strings. Components resolve them to Lucide components at runtime via the central registry — keeping content portable and components free of direct icon imports.
+
+```js
+// In content files — store the icon name as a string
+{ icon: 'Briefcase', title: 'Consulting' }
+
+// In components — resolve to a Lucide component dynamically
+import { resolveIcon } from '@/utils/icons'
+<component :is="resolveIcon(serviceItem.icon)" />
+
+// To add a new icon — import it in src/utils/icons.js and add to the registry
+```
+
 ---
 
 ## 6. Config Rules
