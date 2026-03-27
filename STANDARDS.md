@@ -6,9 +6,24 @@ When in doubt, refer here first.
 
 ---
 
+## Table of Contents
+
+1. [Vue Components](#1-vue-components)
+2. [Naming Conventions](#2-naming-conventions)
+3. [Script Setup Structure](#3-script-setup-structure)
+4. [Styling Rules](#4-styling-rules)
+5. [Content Rules](#5-content-rules)
+6. [Config Rules](#6-config-rules)
+7. [Comments](#7-comments)
+8. [Git Commits](#8-git-commits)
+9. [File & Folder Structure](#9-file--folder-structure)
+
+---
+
 ## 1. Vue Components
 
 ### Always use Composition API with `<script setup>`
+
 ```vue
 <!-- CORRECT -->
 <script setup>
@@ -21,17 +36,25 @@ export default {
   data() { return {} }
 }
 </script>
+```
 
-Section order inside every .vue file
+### Section order inside every `.vue` file
+
 Always in this order — template, script, style:
 
+```vue
 <template>...</template>
 <script setup>...</script>
 <style lang="scss" scoped>...</style>
+```
 
-2. Naming Conventions
-Variables — always descriptive, never abbreviated
+---
 
+## 2. Naming Conventions
+
+### Variables — always descriptive, never abbreviated
+
+```js
 // CORRECT
 const isMenuOpen = ref(false)
 const currentLanguage = ref('en')
@@ -41,9 +64,11 @@ const hasMultipleLanguages = computed(() => languages.length > 1)
 const open = ref(false)
 const lang = ref('en')
 const multi = computed(() => languages.length > 1)
+```
 
-Booleans — always start with is, has, can, should
+### Booleans — always start with `is`, `has`, `can`, `should`
 
+```js
 // CORRECT
 const isLoading = ref(false)
 const hasError = ref(false)
@@ -53,9 +78,11 @@ const canSubmit = computed(() => form.name && form.email)
 const loading = ref(false)
 const error = ref(false)
 const submit = computed(() => form.name && form.email)
+```
 
-Functions — always start with a verb
+### Functions — always start with a verb
 
+```js
 // CORRECT
 function openMenu() {}
 function fetchServices() {}
@@ -67,22 +94,33 @@ function menu() {}
 function services() {}
 function scroll() {}
 function language(code) {}
+```
 
-Components — always PascalCase
+### Components — always PascalCase
+
+```
 AppHeader.vue
 HeroSection.vue
 ServiceCard.vue
+```
 
-CSS classes — always BEM
+### CSS classes — always BEM
+
+```css
 .hero {}
 .hero__title {}
 .hero__subtitle {}
 .hero__cta-button {}
 .hero--dark {}
+```
 
-3. Script Setup Structure
-Always organise <script setup> in this order:
+---
 
+## 3. Script Setup Structure
+
+Always organise `<script setup>` in this order:
+
+```js
 // 1. Imports
 import { ref, computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -113,10 +151,15 @@ function toggleMenu() {
 onMounted(() => {
   fetchData()
 })
+```
 
-4. Styling Rules
-Never hardcode colors, fonts, or spacing
+---
 
+## 4. Styling Rules
+
+### Never hardcode colors, fonts, or spacing
+
+```scss
 // CORRECT
 color: var(--color-primary);
 font-size: var(--font-size-lg);
@@ -126,19 +169,27 @@ padding: var(--space-8);
 color: #2C5F5D;
 font-size: 18px;
 padding: 32px;
+```
 
-Always use scoped styles in components
+### Always use scoped styles in components
+
+```vue
 <style lang="scss" scoped>
+```
 
-Always use SCSS nesting with BEM
+### Always use SCSS nesting with BEM
+
+```scss
 .card {
   &__title { ... }
   &__body { ... }
   &--featured { ... }
 }
+```
 
-Breakpoints — always mobile-first
+### Breakpoints — always mobile-first
 
+```scss
 // CORRECT — base is mobile, scale up
 .hero__title {
   font-size: var(--font-size-2xl);
@@ -156,45 +207,62 @@ Breakpoints — always mobile-first
     font-size: var(--font-size-2xl);
   }
 }
+```
 
-5. Content Rules
-Never hardcode text in components
+---
 
+## 5. Content Rules
+
+### Never hardcode text in components
+
+```vue
 <!-- CORRECT -->
 <h1>{{ t('hero.title') }}</h1>
 
 <!-- WRONG -->
 <h1>Welcome to our website</h1>
+```
 
-All content lives in /content/{locale}/index.js
+### All content lives in `/content/{locale}/index.js`
 
+```
 content/
   en/index.js
   el/index.js
+```
 
+---
 
-6. Config Rules
-Everything client-specific lives in client-config.js
+## 6. Config Rules
 
-Site name, logo, description
-Theme selection
-Languages
-Nav links
-Sections and their order
-Contact info
-SEO defaults
+### Everything client-specific lives in `client-config.js`
 
-Components read from config, never hardcode client data
+- Site name, logo, description
+- Theme selection
+- Languages
+- Nav links
+- Sections and their order
+- Contact info
+- SEO defaults
+
+### Components read from config — never hardcode client data
+
+```js
 // CORRECT
 import clientConfig from '../../../client-config.js'
 const config = clientConfig
 
 // WRONG
 const siteName = 'Dr. Smith Psychology'
+```
 
-7. Comments
-Always comment the why, not the what
+---
 
+## 7. Comments
+
+### Always comment the *why*, not the *what*
+
+```js
 // CORRECT — explains why
 // Language switcher only renders when more than one language is configured
 const hasMultipleLanguages = computed(() => config.languages.length > 1)
@@ -202,19 +270,29 @@ const hasMultipleLanguages = computed(() => config.languages.length > 1)
 // WRONG — explains what (the code already says this)
 // Check if languages length is greater than 1
 const hasMultipleLanguages = computed(() => config.languages.length > 1)
+```
 
-8. Git Commits
-Always use Conventional Commits format:
+---
+
+## 8. Git Commits
+
+Always use [Conventional Commits](https://www.conventionalcommits.org/) format:
+
+```
 feat: add HeroSection component
 fix: mobile menu not closing on route change
 chore: update dependencies
 refactor: extract form validation into composable
 docs: update STANDARDS.md with git rules
+```
 
-Push after every stable, working step — never leave broken code on main.
+> Push after every stable, working step — never leave broken code on `main`.
 
-9. File & Folder Structure
+---
 
+## 9. File & Folder Structure
+
+```
 src/
   assets/
     fonts/        # Self-hosted fonts only
@@ -236,3 +314,4 @@ public/
   admin/          # Decap CMS files
 client-config.js  # Single source of truth for client setup
 STANDARDS.md      # This file
+```
