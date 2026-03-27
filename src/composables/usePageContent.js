@@ -52,9 +52,11 @@ export function usePageContent() {
   }))
 
   // --- FAQ Section Content ---
-  // items is an array — use tm() not t()
+  // items is an array of objects — use tm() not t()
   const faqContent = computed(() => ({
     title: t('faq.title'),
+    subtitle: t('faq.subtitle'),
+    description: t('faq.description'),
     items: tm('faq.items'),
   }))
 
