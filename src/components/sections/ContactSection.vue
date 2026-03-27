@@ -4,9 +4,11 @@
 
       <!-- Left Column — info -->
       <div class="contact__info">
-        <span class="section-header__eyebrow">{{ subtitle }}</span>
-        <h2 class="section-header__title">{{ title }}</h2>
-        <p class="section-header__description">{{ description }}</p>
+        <div class="section-header section-header--left">
+          <span class="section-header__eyebrow">{{ subtitle }}</span>
+          <h2 class="section-header__title">{{ title }}</h2>
+          <p v-if="description" class="section-header__description">{{ description }}</p>
+        </div>
 
         <div class="contact__details">
           <a

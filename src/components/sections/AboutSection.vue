@@ -25,7 +25,7 @@
 
       <!-- Content Column -->
       <div class="about__content">
-        <div class="section-header" style="text-align: left; margin: 0 0 var(--space-8);">
+        <div class="section-header section-header--left">
           <span class="section-header__eyebrow">{{ subtitle }}</span>
           <h2 class="section-header__title">{{ title }}</h2>
         </div>
