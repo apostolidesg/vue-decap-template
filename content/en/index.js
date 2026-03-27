@@ -6,9 +6,11 @@ export default {
     contact: 'Contact',
   },
   hero: {
-    title: 'Welcome to Our Website',
-    subtitle: 'We provide professional services tailored to your needs.',
-    cta: 'Get in Touch',
+    title: 'Professional Services You Can Trust',
+    subtitle: 'We help businesses grow with modern, thoughtful solutions tailored to your unique needs.',
+    primaryCta: 'Get in Touch',
+    secondaryCta: 'Learn More',
+    imageAlt: 'Hero image',
   },
   about: {
     title: 'About Us',
@@ -17,20 +19,23 @@ export default {
   services: {
     title: 'Our Services',
     subtitle: 'What we offer',
+    items: [],
   },
   testimonials: {
     title: 'What Our Clients Say',
+    items: [],
   },
   faq: {
     title: 'Frequently Asked Questions',
+    items: [],
   },
   contact: {
     title: 'Get in Touch',
     subtitle: 'We would love to hear from you.',
-    name: 'Your Name',
-    email: 'Your Email',
-    message: 'Your Message',
-    send: 'Send Message',
+    namePlaceholder: 'Your Name',
+    emailPlaceholder: 'Your Email',
+    messagePlaceholder: 'Your Message',
+    sendButton: 'Send Message',
   },
   footer: {
     rights: 'All rights reserved.',

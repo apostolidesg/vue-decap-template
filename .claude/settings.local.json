@@ -4,7 +4,8 @@
       "Bash(BASE=\"c:/Users/papia/GitHub/vue-decap-template\")",
       "Bash(mkdir -p \"$BASE/src/themes\" \"$BASE/src/components/common\" \"$BASE/src/components/sections\" \"$BASE/src/layouts\" \"$BASE/src/pages\" \"$BASE/src/utils\" \"$BASE/src/locales\" \"$BASE/src/assets/images\" \"$BASE/src/assets/fonts\" \"$BASE/public/admin\")",
       "Bash(touch \"$BASE/src/themes/.gitkeep\" \"$BASE/src/components/common/.gitkeep\" \"$BASE/src/components/sections/.gitkeep\" \"$BASE/src/layouts/.gitkeep\" \"$BASE/src/pages/.gitkeep\" \"$BASE/src/utils/.gitkeep\" \"$BASE/src/locales/.gitkeep\" \"$BASE/src/assets/images/.gitkeep\" \"$BASE/src/assets/fonts/.gitkeep\" \"$BASE/public/admin/.gitkeep\")",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(npm run:*)"
     ]
   }
 }
