@@ -2,13 +2,11 @@ backend:
   name: git-gateway
   branch: main
 
-# Where uploaded media files are stored
 media_folder: public/uploads
 public_folder: /uploads
 
-# Supported locales
 i18n:
-  structure: single_file
+  structure: multiple_files
   locales: [en, el]
   default_locale: en
 
@@ -20,66 +18,27 @@ collections:
 
       - name: hero
         label: Hero Section
-        file: content/en/index.json
-        i18n:
-          structure: single_file
-          locales: [en, el]
+        i18n: true
+        file: content/en/hero.json
         fields:
-          - label: Title
-            name: title
-            widget: string
-            i18n: true
-          - label: Subtitle
-            name: subtitle
-            widget: text
-            i18n: true
-          - label: Primary Button Text
-            name: primaryCta
-            widget: string
-            i18n: true
-          - label: Secondary Button Text
-            name: secondaryCta
-            widget: string
-            i18n: true
-          - label: Hero Image
-            name: imageSrc
-            widget: image
-            required: false
-            i18n: duplicate
-          - label: Image Alt Text
-            name: imageAlt
-            widget: string
-            i18n: true
+          - { label: Title, name: title, widget: string, i18n: true }
+          - { label: Subtitle, name: subtitle, widget: text, i18n: true }
+          - { label: Primary Button Text, name: primaryCta, widget: string, i18n: true }
+          - { label: Secondary Button Text, name: secondaryCta, widget: string, i18n: true }
+          - { label: Hero Image, name: imageSrc, widget: image, required: false, i18n: duplicate }
+          - { label: Image Alt Text, name: imageAlt, widget: string, i18n: true }
 
       - name: about
         label: About Section
-        file: content/en/index.json
+        i18n: true
+        file: content/en/about.json
         fields:
-          - label: Title
-            name: title
-            widget: string
-            i18n: true
-          - label: Subtitle
-            name: subtitle
-            widget: string
-            i18n: true
-          - label: Main Body Text
-            name: body
-            widget: text
-            i18n: true
-          - label: Secondary Body Text
-            name: secondaryBody
-            widget: text
-            i18n: true
-          - label: About Image
-            name: imageSrc
-            widget: image
-            required: false
-            i18n: duplicate
-          - label: Image Alt Text
-            name: imageAlt
-            widget: string
-            i18n: true
+          - { label: Title, name: title, widget: string, i18n: true }
+          - { label: Subtitle, name: subtitle, widget: string, i18n: true }
+          - { label: Main Body Text, name: body, widget: text, i18n: true }
+          - { label: Secondary Body Text, name: secondaryBody, widget: text, i18n: true }
+          - { label: About Image, name: imageSrc, widget: image, required: false, i18n: duplicate }
+          - { label: Image Alt Text, name: imageAlt, widget: string, i18n: true }
           - label: Stats
             name: stats
             widget: list
@@ -90,45 +49,29 @@ collections:
 
       - name: services
         label: Services Section
-        file: content/en/index.json
+        i18n: true
+        file: content/en/services.json
         fields:
-          - label: Title
-            name: title
-            widget: string
-            i18n: true
-          - label: Subtitle
-            name: subtitle
-            widget: string
-            i18n: true
-          - label: Description
-            name: description
-            widget: text
-            i18n: true
+          - { label: Title, name: title, widget: string, i18n: true }
+          - { label: Subtitle, name: subtitle, widget: string, i18n: true }
+          - { label: Description, name: description, widget: text, i18n: true }
           - label: Services
             name: items
             widget: list
             i18n: true
             fields:
-              - { label: Icon Name, name: icon, widget: string, hint: "Lucide icon name e.g. Briefcase, Star, Heart" }
+              - { label: Icon Name, name: icon, widget: string, hint: "Lucide icon name e.g. Briefcase Star Heart" }
               - { label: Title, name: title, widget: string }
               - { label: Description, name: description, widget: text }
 
       - name: testimonials
         label: Testimonials Section
-        file: content/en/index.json
+        i18n: true
+        file: content/en/testimonials.json
         fields:
-          - label: Title
-            name: title
-            widget: string
-            i18n: true
-          - label: Subtitle
-            name: subtitle
-            widget: string
-            i18n: true
-          - label: Description
-            name: description
-            widget: text
-            i18n: true
+          - { label: Title, name: title, widget: string, i18n: true }
+          - { label: Subtitle, name: subtitle, widget: string, i18n: true }
+          - { label: Description, name: description, widget: text, i18n: true }
           - label: Testimonials
             name: items
             widget: list
@@ -137,24 +80,16 @@ collections:
               - { label: Quote, name: quote, widget: text }
               - { label: Author Name, name: author, widget: string }
               - { label: Author Role, name: role, widget: string }
-              - { label: Rating, name: rating, widget: number, min: 1, max: 5, default: 5 }
+              - { label: Rating, name: rating, widget: number, value_type: int, min: 1, max: 5, default: 5 }
 
       - name: faq
         label: FAQ Section
-        file: content/en/index.json
+        i18n: true
+        file: content/en/faq.json
         fields:
-          - label: Title
-            name: title
-            widget: string
-            i18n: true
-          - label: Subtitle
-            name: subtitle
-            widget: string
-            i18n: true
-          - label: Description
-            name: description
-            widget: text
-            i18n: true
+          - { label: Title, name: title, widget: string, i18n: true }
+          - { label: Subtitle, name: subtitle, widget: string, i18n: true }
+          - { label: Description, name: description, widget: text, i18n: true }
           - label: FAQ Items
             name: items
             widget: list
@@ -165,41 +100,15 @@ collections:
 
       - name: contact
         label: Contact Section
-        file: content/en/index.json
+        i18n: true
+        file: content/en/contact.json
         fields:
-          - label: Title
-            name: title
-            widget: string
-            i18n: true
-          - label: Subtitle
-            name: subtitle
-            widget: string
-            i18n: true
-          - label: Description
-            name: description
-            widget: text
-            i18n: true
-          - label: Name Field Placeholder
-            name: namePlaceholder
-            widget: string
-            i18n: true
-          - label: Email Field Placeholder
-            name: emailPlaceholder
-            widget: string
-            i18n: true
-          - label: Message Field Placeholder
-            name: messagePlaceholder
-            widget: string
-            i18n: true
-          - label: Send Button Text
-            name: sendButton
-            widget: string
-            i18n: true
-          - label: Success Message
-            name: successMessage
-            widget: string
-            i18n: true
-          - label: Error Message
-            name: errorMessage
-            widget: string
-            i18n: true
+          - { label: Title, name: title, widget: string, i18n: true }
+          - { label: Subtitle, name: subtitle, widget: string, i18n: true }
+          - { label: Description, name: description, widget: text, i18n: true }
+          - { label: Name Field Placeholder, name: namePlaceholder, widget: string, i18n: true }
+          - { label: Email Field Placeholder, name: emailPlaceholder, widget: string, i18n: true }
+          - { label: Message Field Placeholder, name: messagePlaceholder, widget: string, i18n: true }
+          - { label: Send Button Text, name: sendButton, widget: string, i18n: true }
+          - { label: Success Message, name: successMessage, widget: string, i18n: true }
+          - { label: Error Message, name: errorMessage, widget: string, i18n: true }
