@@ -20,8 +20,8 @@ const dynamicRoutes = clientConfig.nav
   .filter(item => item.path !== '/')
   .map(item => ({
     path: item.path,
-    name: item.label.toLowerCase().replace(/\s+/g, '-'),
-    component: () => import(`../pages/${item.label.replace(/\s+/g, '')}Page.vue`),
+    name: item.label.en.toLowerCase().replace(/\s+/g, '-'),
+    component: () => import(`../pages/${item.label.en.replace(/\s+/g, '')}Page.vue`),
   }))
 
 const router = createRouter({
