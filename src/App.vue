@@ -1,7 +1,13 @@
+<template>
+  <div id="app">
+    <RouterView />
+  </div>
+</template>
+
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import { RouterView } from 'vue-router'
 </script>
 
-<template>
-  <HelloWorld />
-</template>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+</style>

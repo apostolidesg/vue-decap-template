@@ -1,0 +1,74 @@
+export default {
+  name: 'default',
+  tokens: {
+    // Colors
+    '--color-primary': '#2C5F5D',
+    '--color-primary-light': '#3D8280',
+    '--color-primary-dark': '#1A3B3A',
+    '--color-secondary': '#E8F4F3',
+    '--color-accent': '#F4A836',
+    '--color-background': '#FFFFFF',
+    '--color-surface': '#F8FAFB',
+    '--color-text-primary': '#1A1A2E',
+    '--color-text-secondary': '#6B7280',
+    '--color-text-inverse': '#FFFFFF',
+    '--color-border': '#E5E7EB',
+    '--color-error': '#EF4444',
+    '--color-success': '#10B981',
+
+    // Typography
+    '--font-family-heading': "'Inter', sans-serif",
+    '--font-family-body': "'Inter', sans-serif",
+    '--font-size-xs': '0.75rem',
+    '--font-size-sm': '0.875rem',
+    '--font-size-base': '1rem',
+    '--font-size-lg': '1.125rem',
+    '--font-size-xl': '1.25rem',
+    '--font-size-2xl': '1.5rem',
+    '--font-size-3xl': '1.875rem',
+    '--font-size-4xl': '2.25rem',
+    '--font-size-5xl': '3rem',
+    '--font-weight-normal': '400',
+    '--font-weight-medium': '500',
+    '--font-weight-semibold': '600',
+    '--font-weight-bold': '700',
+    '--line-height-tight': '1.25',
+    '--line-height-normal': '1.5',
+    '--line-height-relaxed': '1.75',
+
+    // Spacing
+    '--space-1': '0.25rem',
+    '--space-2': '0.5rem',
+    '--space-3': '0.75rem',
+    '--space-4': '1rem',
+    '--space-6': '1.5rem',
+    '--space-8': '2rem',
+    '--space-12': '3rem',
+    '--space-16': '4rem',
+    '--space-20': '5rem',
+    '--space-24': '6rem',
+
+    // Layout
+    '--container-max-width': '1200px',
+    '--container-padding': '1.5rem',
+    '--section-padding': '5rem',
+
+    // Borders
+    '--radius-sm': '0.25rem',
+    '--radius-md': '0.5rem',
+    '--radius-lg': '1rem',
+    '--radius-xl': '1.5rem',
+    '--radius-full': '9999px',
+
+    // Shadows
+    '--shadow-sm': '0 1px 2px rgba(0,0,0,0.05)',
+    '--shadow-md': '0 4px 6px rgba(0,0,0,0.07)',
+    '--shadow-lg': '0 10px 15px rgba(0,0,0,0.1)',
+    '--shadow-xl': '0 20px 25px rgba(0,0,0,0.1)',
+
+    // Transitions
+    '--transition-fast': '150ms ease',
+    '--transition-base': '250ms ease',
+    '--transition-slow': '350ms ease',
+  }
+}
