@@ -1,77 +1,30 @@
 <template>
   <div class="page page-home">
-    <HeroSection
-      :title="heroContent.title"
-      :subtitle="heroContent.subtitle"
-      :primary-cta="heroContent.primaryCta"
-      :primary-cta-link="heroContent.primaryCtaLink"
-      :secondary-cta="heroContent.secondaryCta"
-      :secondary-cta-link="heroContent.secondaryCtaLink"
-      :image-src="resolvedHeroImage"
-      :image-alt="heroContent.imageAlt"
-      layout="image-right"
-    />
-    <AboutSection
-      :title="aboutContent.title"
-      :subtitle="aboutContent.subtitle"
-      :body="aboutContent.body"
-      :secondary-body="aboutContent.secondaryBody"
-      :image-alt="aboutContent.imageAlt"
-      :stats="aboutContent.stats"
-      image-position="left"
-    />
-    <ServicesSection
-      :title="servicesContent.title"
-      :subtitle="servicesContent.subtitle"
-      :description="servicesContent.description"
-      :items="servicesContent.items"
-      :columns="3"
-    />
-    <TestimonialsSection
-      :title="testimonialsContent.title"
-      :subtitle="testimonialsContent.subtitle"
-      :description="testimonialsContent.description"
-      :items="testimonialsContent.items"
-    />
-    <FAQSection
-      :title="faqContent.title"
-      :subtitle="faqContent.subtitle"
-      :description="faqContent.description"
-      :items="faqContent.items"
-    />
-    <ContactSection
-      :title="contactContent.title"
-      :subtitle="contactContent.subtitle"
-      :description="contactContent.description"
-      :name-placeholder="contactContent.namePlaceholder"
-      :email-placeholder="contactContent.emailPlaceholder"
-      :message-placeholder="contactContent.messagePlaceholder"
-      :send-button="contactContent.sendButton"
-      :success-message="contactContent.successMessage"
-      :error-message="contactContent.errorMessage"
+    <!--
+      Sections render dynamically from client-config.js sections array.
+      To add, remove, or reorder sections — edit client-config.js only.
+      No changes needed here.
+    -->
+    <component
+      :is="resolveSection(sectionName)"
+      v-for="sectionName in config.sections"
+      :key="sectionName"
+      v-bind="getSectionProps(sectionName)"
     />
   </div>
 </template>
 
 <script setup>
-import { computed } from 'vue'
-import HeroSection from '@/components/sections/HeroSection.vue'
-import AboutSection from '@/components/sections/AboutSection.vue'
-import ServicesSection from '@/components/sections/ServicesSection.vue'
-import TestimonialsSection from '@/components/sections/TestimonialsSection.vue'
-import FAQSection from '@/components/sections/FAQSection.vue'
-import ContactSection from '@/components/sections/ContactSection.vue'
-import { usePageContent } from '@/composables/usePageContent'
-import { resolveImagePath } from '@/utils/image'
+import { useClientConfig } from '@/composables/useClientConfig'
+import { useSectionRegistry } from '@/composables/useSectionRegistry'
+import { useSectionProps } from '@/composables/useSectionProps'
 
-// All page content comes from one composable
-const { heroContent, aboutContent, servicesContent, testimonialsContent, faqContent, contactContent } = usePageContent()
+// Config drives which sections render and in what order
+const { config } = useClientConfig()
 
-// Placeholder hero image until client provides their own via CMS
-const resolvedHeroImage = computed(() =>
-  resolveImagePath(
-    '',
-    'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format&fit=crop'
-  )
-)
+// Registry resolves section name strings to async Vue components
+const { resolveSection } = useSectionRegistry()
+
+// Props map provides the correct props for each section
+const { getSectionProps } = useSectionProps()
 </script>

@@ -6,57 +6,50 @@
 
 export default {
   // --- Site Identity ---
-  siteName: 'My Client Site',
-  siteDescription: 'A modern website built with Vue + Decap CMS',
-  logo: '/assets/images/logo.png',
+  siteName: "My Client Site",
+  siteDescription: "A modern website built with Vue + Decap CMS",
+  logo: "/assets/images/logo.png",
 
   // --- Theme ---
   // Maps to a file in /src/themes/{theme}.js
-  theme: 'default',
+  theme: "default",
 
   // --- Languages ---
-  languages: ['en', 'el'],
-  defaultLocale: 'en',
+  languages: ["en", "el"],
+  defaultLocale: "en",
 
   // --- Sections ---
   // Controls which sections appear on the homepage and in what order
-  sections: [
-    'hero',
-    'about',
-    'services',
-    'testimonials',
-    'faq',
-    'contact',
-  ],
+  sections: ["hero", "about", "services", "testimonials", "faq", "contact"],
 
   // --- Navigation ---
   nav: [
-    { label: 'Home', path: '/' },
-    { label: 'About', path: '/about' },
-    { label: 'Services', path: '/services' },
-    { label: 'Contact', path: '/contact' },
+    { label: "Home", path: "/" },
+    { label: "About", path: "/about" },
+    { label: "Services", path: "/services" },
+    { label: "Contact", path: "/contact" },
   ],
 
   // --- Contact Info ---
   contact: {
-    email: 'info@clientsite.com',
-    phone: '+30 210 000 0000',
-    address: 'Athens, Greece',
+    email: "info@clientsite.com",
+    phone: "+30 210 000 0000",
+    address: "Athens, Greece",
     social: {
-      facebook: '',
-      instagram: '',
-      linkedin: '',
+      facebook: "",
+      instagram: "",
+      linkedin: "",
     },
   },
 
   // --- SEO Defaults ---
   seo: {
-    titleTemplate: '%s | My Client Site',
-    defaultImage: '/assets/images/og-image.jpg',
+    titleTemplate: "%s | My Client Site",
+    defaultImage: "/assets/images/og-image.jpg",
   },
 
   // --- Deployment ---
   deploy: {
-    platform: 'netlify', // 'netlify' or 'vercel'
+    platform: "netlify", // 'netlify' or 'vercel'
   },
-}
+};
