@@ -17,7 +17,7 @@
           class="header__nav-link"
           @click="closeMobileMenu"
         >
-          {{ t(`nav.${navItem.label.toLowerCase()}`) }}
+          {{ navItem.label[currentLocale] || navItem.label.en }}
         </RouterLink>
 
         <!-- Language switcher: only shown when more than one language is configured -->
@@ -57,7 +57,7 @@ import { useI18n } from 'vue-i18n'
 import { useClientConfig } from '@/composables/useClientConfig'
 
 // i18n
-const { t, locale: currentLocale } = useI18n()
+const { locale: currentLocale } = useI18n()
 
 // Config
 const { config } = useClientConfig()
