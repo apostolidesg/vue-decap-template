@@ -8,11 +8,11 @@ import { useI18n } from 'vue-i18n'
  * Pages use this to get all their content in one place, then pass it down
  * to section components as props.
  *
- * This keeps templates clean, sections dumb, and all content logic centralised.
- * When a section needs new content fields, add them here — not in the template.
+ * Important: use t() for strings, tm() for arrays and nested objects.
+ * t() always returns a string — it will break array/object content fields.
  */
 export function usePageContent() {
-  const { t } = useI18n()
+  const { t, tm } = useI18n()
 
   // --- Hero Section Content ---
   const heroContent = computed(() => ({
@@ -26,28 +26,36 @@ export function usePageContent() {
   }))
 
   // --- About Section Content ---
+  // stats is an array — use tm() not t()
   const aboutContent = computed(() => ({
     title: t('about.title'),
+    subtitle: t('about.subtitle'),
     body: t('about.body'),
+    secondaryBody: t('about.secondaryBody'),
+    imageAlt: t('about.imageAlt'),
+    stats: tm('about.stats'),
   }))
 
   // --- Services Section Content ---
+  // items is an array — use tm() not t()
   const servicesContent = computed(() => ({
     title: t('services.title'),
     subtitle: t('services.subtitle'),
-    items: t('services.items'),
+    items: tm('services.items'),
   }))
 
   // --- Testimonials Section Content ---
+  // items is an array — use tm() not t()
   const testimonialsContent = computed(() => ({
     title: t('testimonials.title'),
-    items: t('testimonials.items'),
+    items: tm('testimonials.items'),
   }))
 
   // --- FAQ Section Content ---
+  // items is an array — use tm() not t()
   const faqContent = computed(() => ({
     title: t('faq.title'),
-    items: t('faq.items'),
+    items: tm('faq.items'),
   }))
 
   // --- Contact Section Content ---

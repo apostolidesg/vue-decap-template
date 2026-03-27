@@ -14,7 +14,15 @@ export default {
   },
   about: {
     title: 'About Us',
-    body: 'We are a professional team dedicated to delivering excellence.',
+    subtitle: 'Who we are and what drives us',
+    body: 'We are a team of dedicated professionals with years of experience delivering results for our clients. Our approach combines deep expertise with a genuine commitment to understanding your unique needs.',
+    secondaryBody: 'Based in Athens, we work with businesses across Greece and Europe, bringing modern solutions to every project we take on.',
+    imageAlt: 'About us image',
+    stats: [
+      { number: '10+', label: 'Years Experience' },
+      { number: '200+', label: 'Happy Clients' },
+      { number: '98%', label: 'Satisfaction Rate' },
+    ],
   },
   services: {
     title: 'Our Services',

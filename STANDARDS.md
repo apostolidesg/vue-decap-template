@@ -231,6 +231,21 @@ content/
   el/index.js
 ```
 
+### Use `t()` for strings, `tm()` for arrays and objects
+
+`t()` always returns a string — passing it a key that holds an array or object will return `"[object Object]"` or the key name instead of the actual data.
+
+```js
+// CORRECT
+title: t('hero.title'),        // string → use t()
+items: tm('services.items'),   // array  → use tm()
+stats: tm('about.stats'),      // array of objects → use tm()
+
+// WRONG — t() breaks on non-string values
+items: t('services.items'),    // returns "[object Object]" or key name
+stats: t('about.stats'),       // same problem
+```
+
 ---
 
 ## 6. Config Rules
