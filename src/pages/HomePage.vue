@@ -27,6 +27,12 @@
       :items="servicesContent.items"
       :columns="3"
     />
+    <TestimonialsSection
+      :title="testimonialsContent.title"
+      :subtitle="testimonialsContent.subtitle"
+      :description="testimonialsContent.description"
+      :items="testimonialsContent.items"
+    />
     <FAQSection
       :title="faqContent.title"
       :subtitle="faqContent.subtitle"
@@ -41,12 +47,13 @@ import { computed } from 'vue'
 import HeroSection from '@/components/sections/HeroSection.vue'
 import AboutSection from '@/components/sections/AboutSection.vue'
 import ServicesSection from '@/components/sections/ServicesSection.vue'
+import TestimonialsSection from '@/components/sections/TestimonialsSection.vue'
 import FAQSection from '@/components/sections/FAQSection.vue'
 import { usePageContent } from '@/composables/usePageContent'
 import { resolveImagePath } from '@/utils/image'
 
 // All page content comes from one composable
-const { heroContent, aboutContent, servicesContent, faqContent } = usePageContent()
+const { heroContent, aboutContent, servicesContent, testimonialsContent, faqContent } = usePageContent()
 
 // Placeholder hero image until client provides their own via CMS
 const resolvedHeroImage = computed(() =>

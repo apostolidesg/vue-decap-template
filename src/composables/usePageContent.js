@@ -45,9 +45,11 @@ export function usePageContent() {
   }))
 
   // --- Testimonials Section Content ---
-  // items is an array — use tm() not t()
+  // items is an array of objects — use tm() not t()
   const testimonialsContent = computed(() => ({
     title: t('testimonials.title'),
+    subtitle: t('testimonials.subtitle'),
+    description: t('testimonials.description'),
     items: tm('testimonials.items'),
   }))
 

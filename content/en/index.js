@@ -63,7 +63,28 @@ export default {
   },
   testimonials: {
     title: 'What Our Clients Say',
-    items: [],
+    subtitle: 'Client stories',
+    description: 'Do not just take our word for it. Here is what people who have worked with us have to say.',
+    items: [
+      {
+        quote: 'Working with this team completely transformed how we approach our business. The results speak for themselves.',
+        author: 'Maria Papadopoulou',
+        role: 'CEO, Athenian Ventures',
+        rating: 5,
+      },
+      {
+        quote: 'Professional, responsive, and genuinely invested in our success. I could not recommend them more highly.',
+        author: 'Nikos Alexandrou',
+        role: 'Founder, GrowthLab',
+        rating: 5,
+      },
+      {
+        quote: 'They took the time to really understand our needs before proposing anything. Refreshing and effective.',
+        author: 'Elena Christodoulou',
+        role: 'Director, Hellas Partners',
+        rating: 5,
+      },
+    ],
   },
   faq: {
     title: 'Frequently Asked Questions',
