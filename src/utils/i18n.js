@@ -8,7 +8,7 @@ async function loadMessages() {
 
   for (const localeCode of config.languages) {
     try {
-      const module = await import(`../../content/${localeCode}/index.js`)
+      const module = await import(`../../content/${localeCode}/index.json`)
       messages[localeCode] = module.default
     } catch (error) {
       console.warn(`No content found for locale "${localeCode}"`)
