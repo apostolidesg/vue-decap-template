@@ -42,7 +42,7 @@ export function useSectionProps() {
       secondaryCtaLink: heroContent.value.secondaryCtaLink,
       imageSrc: resolvedHeroImage.value,
       imageAlt: heroContent.value.imageAlt,
-      layout: 'image-right',
+      // layout comes from client-config.js sections array, not hardcoded here
     },
     about: {
       title: aboutContent.value.title,

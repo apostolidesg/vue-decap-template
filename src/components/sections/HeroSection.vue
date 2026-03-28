@@ -80,11 +80,11 @@ const props = defineProps({
     default: '',
   },
   // Controls the visual layout of the hero
-  // Options: 'image-right' | 'image-background'
+  // Options: 'image-right' | 'image-background' | 'cinematic'
   layout: {
     type: String,
     default: 'image-right',
-    validator: (value) => ['image-right', 'image-background'].includes(value),
+    validator: (value) => ['image-right', 'image-background', 'cinematic'].includes(value),
   },
 })
 
@@ -228,6 +228,41 @@ const isBackgroundLayout = computed(() => props.layout === 'image-background')
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-xl);
     object-fit: cover;
+  }
+
+  // --- Cinematic Layout ---
+  // Full-bleed, full-viewport hero with large display type and centered content
+  &--cinematic {
+    padding: 0;
+    min-height: 100vh;
+    background: var(--color-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .hero__inner {
+      display: block;
+    }
+
+    .hero__content {
+      text-align: center;
+      max-width: none;
+      padding: var(--space-16) var(--space-8);
+    }
+
+    .hero__title {
+      font-size: var(--font-size-4xl);
+
+      @media (min-width: 768px) {
+        font-size: var(--font-size-5xl);
+      }
+    }
+
+    .hero__subtitle {
+      font-size: var(--font-size-xl);
+      opacity: 0.8;
+      max-width: none;
+    }
   }
 }
 </style>

@@ -65,7 +65,7 @@ export default {
     '--shadow-sm': '0 1px 3px rgba(45, 27, 14, 0.06)',
     '--shadow-md': '0 4px 12px rgba(45, 27, 14, 0.08)',
     '--shadow-lg': '0 12px 24px rgba(45, 27, 14, 0.1)',
-    '--shadow-xl': '0 24px 48px rgba(45, 27, 14, 0.12)',
+    '--shadow-xl': '0 20px 25px rgba(0,0,0,0.1)',
 
     // Transitions
     '--transition-fast': '150ms ease',

@@ -1,5 +1,5 @@
 <template>
-  <section class="about section section--white" id="about">
+  <section class="about section section--white" :class="`about--${props.layout}`" id="about">
     <div class="container about__inner">
 
       <!-- Image Column -->
@@ -79,6 +79,13 @@ const props = defineProps({
     type: String,
     default: 'left',
     validator: (value) => ['left', 'right'].includes(value),
+  },
+  // Controls the visual layout of the section
+  // Options: 'default' | 'editorial'
+  layout: {
+    type: String,
+    default: 'default',
+    validator: (value) => ['default', 'editorial'].includes(value),
   },
 })
 
@@ -183,6 +190,35 @@ const resolvedImage = computed(() =>
 
     &--secondary {
       padding-top: var(--space-2);
+    }
+  }
+
+  // --- Editorial Layout ---
+  // Large pull-quote title with two-column text layout and stats below
+  &--editorial {
+    .section-header__title {
+      font-size: var(--font-size-4xl);
+      font-weight: var(--font-weight-bold);
+      line-height: var(--line-height-tight);
+      max-width: 60%;
+
+      @media (min-width: 768px) {
+        font-size: var(--font-size-5xl);
+      }
+    }
+
+    .about__inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+
+      @media (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .about__stats {
+      margin-top: var(--space-8);
     }
   }
 }

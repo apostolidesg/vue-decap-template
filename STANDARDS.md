@@ -16,7 +16,8 @@ When in doubt, refer here first.
 6. [Config Rules](#6-config-rules)
 7. [Comments](#7-comments)
 8. [Git Commits](#8-git-commits)
-9. [File & Folder Structure](#9-file--folder-structure)
+9. [Layout Variants](#85-layout-variants)
+10. [File & Folder Structure](#9-file--folder-structure)
 
 ---
 
@@ -302,6 +303,17 @@ const hasMultipleLanguages = computed(() => config.languages.length > 1)
 const hasMultipleLanguages = computed(() => config.languages.length > 1)
 ```
 
+### When building a new theme — always verify these components
+
+Components that use `--color-secondary` as a background and must be checked with every new theme:
+- Language switcher active state (AppHeader)
+- Service card icon wrapper (ServicesSection)
+- Contact detail icon wrapper (ContactSection)
+- About stats card (AboutSection)
+- Testimonial author avatar (TestimonialsSection)
+
+Switch to the new theme in `client-config.js`, run `npm run dev`, and visually check each of these before committing.
+
 ---
 
 ## 8. Git Commits
@@ -317,6 +329,59 @@ docs: update STANDARDS.md with git rules
 ```
 
 > Push after every stable, working step — never leave broken code on `main`.
+
+---
+
+## 8.5. Layout Variants
+
+### How variants work
+
+Every section component accepts an optional `layout` prop (default: `'default'`).
+The value comes from the `layout` key in the `sections` array in `client-config.js`.
+
+```js
+// client-config.js
+sections: [
+  { id: 'hero', component: 'HeroSection', layout: 'cinematic' },
+]
+```
+
+The section renderer in `HomePage.vue` passes it as a prop automatically. Components apply a BEM modifier class to their root element:
+
+```vue
+<section class="hero" :class="`hero--${props.layout}`">
+```
+
+Variant styles live inside the component's `<style lang="scss" scoped>` block using BEM:
+
+```scss
+.hero {
+  // default styles
+
+  &--cinematic {
+    // variant overrides
+  }
+}
+```
+
+### Rules for adding a new variant
+
+1. Never hardcode colors — always use CSS custom property tokens
+2. Mobile-first breakpoints for all responsive changes
+3. The `default` layout must remain 100% unchanged
+4. Add the new variant option to `public/admin/config.yml` for the relevant section
+5. Document the variant name and its visual intent with a comment above the SCSS block
+6. Visually verify the variant in all 3 themes before committing
+
+### Current variants
+
+| Section      | Variant     | Description                                      |
+|--------------|-------------|--------------------------------------------------|
+| HeroSection  | image-right | Standard hero with image on the right (default)  |
+| HeroSection  | image-background | Hero with full-bleed background image        |
+| HeroSection  | cinematic   | Full-bleed, 100vh, large display type, centered  |
+| AboutSection | default     | Standard about with stats cards                  |
+| AboutSection | editorial   | Large pull-quote title, two-column text layout   |
 
 ---
 

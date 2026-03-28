@@ -6,10 +6,11 @@
       No changes needed here.
     -->
     <component
-      :is="resolveSection(sectionName)"
-      v-for="sectionName in config.sections"
-      :key="sectionName"
-      v-bind="getSectionProps(sectionName)"
+      :is="resolveSection(section.id)"
+      v-for="section in config.sections"
+      :key="section.id"
+      v-bind="getSectionProps(section.id)"
+      :layout="section.layout || 'default'"
     />
   </div>
 </template>

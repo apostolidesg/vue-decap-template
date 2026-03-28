@@ -19,8 +19,16 @@ export default {
   defaultLocale: "en",
 
   // --- Sections ---
-  // Controls which sections appear on the homepage and in what order
-  sections: ["hero", "about", "services", "testimonials", "faq", "contact"],
+  // Controls which sections appear on the homepage and in what order.
+  // layout is optional — if omitted, the component falls back to its own default internally.
+  sections: [
+    { id: "hero", component: "HeroSection", layout: "image-right" },
+    { id: "about", component: "AboutSection", layout: "default" },
+    { id: "services", component: "ServicesSection", layout: "default" },
+    { id: "testimonials", component: "TestimonialsSection", layout: "default" },
+    { id: "faq", component: "FAQSection", layout: "default" },
+    { id: "contact", component: "ContactSection", layout: "default" },
+  ],
 
   // --- Navigation ---
   nav: [

@@ -65,11 +65,11 @@ export default {
     '--radius-xl': '8px',
     '--radius-full': '9999px',
 
-    // Shadows — darker, more dramatic
-    '--shadow-sm': '0 1px 3px rgba(0, 0, 0, 0.3)',
-    '--shadow-md': '0 4px 12px rgba(0, 0, 0, 0.4)',
-    '--shadow-lg': '0 12px 32px rgba(0, 0, 0, 0.5)',
-    '--shadow-xl': '0 24px 64px rgba(0, 0, 0, 0.6)',
+    // Shadows — tight, low-blur values for dark surfaces (wide blur creates pixelated noise on near-black backgrounds)
+    '--shadow-sm': '0 1px 3px rgba(0, 0, 0, 0.6)',
+    '--shadow-md': '0 2px 6px rgba(0, 0, 0, 0.7)',
+    '--shadow-lg': '0 4px 12px rgba(0, 0, 0, 0.8)',
+    '--shadow-xl': '0 20px 25px rgba(0,0,0,0.1)',
 
     // Transitions — slightly snappier
     '--transition-fast': '120ms ease',

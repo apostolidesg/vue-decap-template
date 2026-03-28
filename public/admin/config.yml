@@ -27,6 +27,14 @@ collections:
           - { label: Secondary Button Text, name: secondaryCta, widget: string, i18n: true }
           - { label: Hero Image, name: imageSrc, widget: image, required: false, i18n: duplicate }
           - { label: Image Alt Text, name: imageAlt, widget: string, i18n: true }
+          - label: "Layout"
+            name: "layout"
+            widget: "select"
+            default: "image-right"
+            i18n: duplicate
+            options:
+              - { label: "Default (Image Right)", value: "image-right" }
+              - { label: "Cinematic (Full-bleed, 100vh)", value: "cinematic" }
 
       - name: about
         label: About Section
@@ -39,6 +47,14 @@ collections:
           - { label: Secondary Body Text, name: secondaryBody, widget: text, i18n: true }
           - { label: About Image, name: imageSrc, widget: image, required: false, i18n: duplicate }
           - { label: Image Alt Text, name: imageAlt, widget: string, i18n: true }
+          - label: "Layout"
+            name: "layout"
+            widget: "select"
+            default: "default"
+            i18n: duplicate
+            options:
+              - { label: "Default", value: "default" }
+              - { label: "Editorial (Large pull-quote title, two-column)", value: "editorial" }
           - label: Stats
             name: stats
             widget: list
