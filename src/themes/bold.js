@@ -5,10 +5,14 @@ export default {
     '--color-primary': '#E8C547',
     '--color-primary-light': '#EDD06A',
     '--color-primary-dark': '#C9A82E',
-    '--color-secondary': '#2A2A2A',
+    // Secondary is used as icon backgrounds and active state fills
+    // Needs to be visible against the near-black background
+    '--color-secondary': '#1F1F1F',
     '--color-accent': '#F5F5F5',
     '--color-background': '#0F0F0F',
     '--color-surface': '#161616',
+    // Surface-raised is used for card backgrounds — slightly lighter than surface
+    '--color-surface-raised': '#242424',
     '--color-text-primary': '#F5F5F5',
     '--color-text-secondary': '#888888',
     '--color-text-inverse': '#0F0F0F',

@@ -24,10 +24,10 @@ export default {
 
   // --- Navigation ---
   nav: [
-    { label: { en: 'Home', el: 'Αρχική' }, path: '/' },
-    { label: { en: 'About', el: 'Σχετικά' }, path: '/about' },
-    { label: { en: 'Services', el: 'Υπηρεσίες' }, path: '/services' },
-    { label: { en: 'Contact', el: 'Επικοινωνία' }, path: '/contact' },
+    { label: { en: "Home", el: "Αρχική" }, path: "/" },
+    { label: { en: "About", el: "Σχετικά" }, path: "/about" },
+    { label: { en: "Services", el: "Υπηρεσίες" }, path: "/services" },
+    { label: { en: "Contact", el: "Επικοινωνία" }, path: "/contact" },
   ],
 
   // --- Contact Info ---

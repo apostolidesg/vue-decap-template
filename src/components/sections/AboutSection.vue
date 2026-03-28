@@ -134,7 +134,8 @@ const resolvedImage = computed(() =>
     position: absolute;
     bottom: calc(-1 * var(--space-8));
     right: calc(-1 * var(--space-8));
-    background: var(--color-background);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-xl);
     padding: var(--space-6);

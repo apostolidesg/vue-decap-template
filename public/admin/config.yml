@@ -112,3 +112,10 @@ collections:
           - { label: Send Button Text, name: sendButton, widget: string, i18n: true }
           - { label: Success Message, name: successMessage, widget: string, i18n: true }
           - { label: Error Message, name: errorMessage, widget: string, i18n: true }
+
+      - name: footer
+        label: Footer
+        i18n: true
+        file: content/footer.json
+        fields:
+          - { label: Copyright Text, name: rights, widget: string, i18n: true }
