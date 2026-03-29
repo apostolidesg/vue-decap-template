@@ -5,7 +5,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
  *
  * Attaches an IntersectionObserver to a single element ref.
  * Adds .is-visible when the element enters the viewport.
- * The observer disconnects after the first trigger (no re-animation).
+ * Stops observing the element after the first trigger (no re-animation).
  *
  * Usage:
  *   const { animationRef } = useScrollAnimation()
@@ -77,16 +77,15 @@ export function useStaggeredAnimation() {
     const children = Array.from(containerRef.value.children)
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-    // Apply stagger delays regardless of reduced-motion preference
-    // (the transition duration/delay is what gets bypassed, not the class)
-    children.forEach((child, index) => {
-      child.style.setProperty('--stagger-delay', `${index * 80}ms`)
-    })
-
     if (prefersReducedMotion) {
       children.forEach((child) => child.classList.add('is-visible'))
       return
     }
+
+    // Apply stagger delays only when animation is appropriate
+    children.forEach((child, index) => {
+      child.style.setProperty('--stagger-delay', `${index * 80}ms`)
+    })
 
     observer = new IntersectionObserver(
       (entries) => {
