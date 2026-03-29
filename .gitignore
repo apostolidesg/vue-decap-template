@@ -26,3 +26,6 @@ dist-ssr
 # Superpowers working files (specs, brainstorm sessions — temporary, not for repo)
 .superpowers/
 docs/superpowers/
+
+# Git worktrees (local development isolation)
+.worktrees/
