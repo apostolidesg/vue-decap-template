@@ -21,7 +21,7 @@ export default {
   // --- Navigation & Pages ---
   // Each nav entry defines a page.
   // banner: true (auto-title from label) | false (no banner) | { title: { en, el }, subtitle: { en, el } }
-  // sections[].layout: 'default' | 'image-right' | 'cinematic'
+  // sections[].layout: 'default' | 'image-right' | 'cinematic' | 'editorial'
   nav: [
     {
       label: { en: "Home", el: "Αρχική" },
@@ -66,6 +66,7 @@ export default {
 
   // --- One-off pages (not in nav) ---
   // customRoutes: [] | [{ path: '/privacy', component: 'PrivacyPage' }]
+  // component: the .vue filename (without extension) in src/pages/ — full-page component, bypasses section/banner system
   customRoutes: [],
 
   // --- Contact Info ---
@@ -87,7 +88,7 @@ export default {
   },
 
   // --- Deployment ---
-  // deploy.platform: 'netlify' | 'vercel'
+  // deploy.platform: 'netlify' | 'vercel' — controls platform-specific build behaviour (redirects, forms)
   deploy: {
     platform: "netlify",
   },
