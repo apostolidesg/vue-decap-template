@@ -11,32 +11,63 @@ export default {
   logo: "/assets/images/logo.png",
 
   // --- Theme ---
-  // Maps to a file in /src/themes/{theme}.js
+  // theme: 'default' | 'warm' | 'bold'
   theme: "default",
 
   // --- Languages ---
   languages: ["en", "el"],
   defaultLocale: "en",
 
-  // --- Sections ---
-  // Controls which sections appear on the homepage and in what order.
-  // layout is optional — if omitted, the component falls back to its own default internally.
-  sections: [
-    { id: "hero", component: "HeroSection", layout: "image-right" },
-    { id: "about", component: "AboutSection", layout: "default" },
-    { id: "services", component: "ServicesSection", layout: "default" },
-    { id: "testimonials", component: "TestimonialsSection", layout: "default" },
-    { id: "faq", component: "FAQSection", layout: "default" },
-    { id: "contact", component: "ContactSection", layout: "default" },
+  // --- Navigation & Pages ---
+  // Each nav entry defines a page.
+  // banner: true (auto-title from label) | false (no banner) | { title: { en, el }, subtitle: { en, el } }
+  // sections[].layout: 'default' | 'image-right' | 'cinematic' | 'editorial'
+  nav: [
+    {
+      label: { en: "Home", el: "Αρχική" },
+      path: "/",
+      banner: false,
+      sections: [
+        { id: "hero", component: "HeroSection", layout: "image-right" },
+        { id: "about", component: "AboutSection", layout: "default" },
+        { id: "services", component: "ServicesSection", layout: "default" },
+        { id: "testimonials", component: "TestimonialsSection", layout: "default" },
+        { id: "faq", component: "FAQSection", layout: "default" },
+        { id: "contact", component: "ContactSection", layout: "default" },
+      ],
+    },
+    {
+      label: { en: "About", el: "Σχετικά" },
+      path: "/about",
+      banner: true,
+      sections: [
+        { id: "about", component: "AboutSection", layout: "default" },
+        { id: "contact", component: "ContactSection", layout: "default" },
+      ],
+    },
+    {
+      label: { en: "Services", el: "Υπηρεσίες" },
+      path: "/services",
+      banner: true,
+      sections: [
+        { id: "services", component: "ServicesSection", layout: "default" },
+        { id: "testimonials", component: "TestimonialsSection", layout: "default" },
+      ],
+    },
+    {
+      label: { en: "Contact", el: "Επικοινωνία" },
+      path: "/contact",
+      banner: true,
+      sections: [
+        { id: "contact", component: "ContactSection", layout: "default" },
+      ],
+    },
   ],
 
-  // --- Navigation ---
-  nav: [
-    { label: { en: "Home", el: "Αρχική" }, path: "/" },
-    { label: { en: "About", el: "Σχετικά" }, path: "/about" },
-    { label: { en: "Services", el: "Υπηρεσίες" }, path: "/services" },
-    { label: { en: "Contact", el: "Επικοινωνία" }, path: "/contact" },
-  ],
+  // --- One-off pages (not in nav) ---
+  // customRoutes: [] | [{ path: '/privacy', component: 'PrivacyPage' }]
+  // component: the .vue filename (without extension) in src/pages/ — full-page component, bypasses section/banner system
+  customRoutes: [],
 
   // --- Contact Info ---
   contact: {
@@ -57,7 +88,8 @@ export default {
   },
 
   // --- Deployment ---
+  // deploy.platform: 'netlify' | 'vercel' — controls platform-specific build behaviour (redirects, forms)
   deploy: {
-    platform: "netlify", // 'netlify' or 'vercel'
+    platform: "netlify",
   },
-};
+}

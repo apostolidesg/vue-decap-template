@@ -41,7 +41,7 @@ See PROJECT.md for full details. Short version:
 - 3 themes: default, warm, bold
 - Decap CMS working end to end
 - Netlify deployment working
-- Multi-page routing partially built — pages exist but are placeholders
+- Multi-page routing complete — all pages config-driven via DynamicPage.vue
 - Layout variants per section not built yet
 - Bold theme has a known stats card contrast issue (fix pending)
 
