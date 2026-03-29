@@ -1,4 +1,6 @@
 <template>
+  <!-- DynamicPage: renders any page defined in client-config.js nav
+       by resolving its sections and optional banner from the matching nav entry. -->
   <div class="page">
     <PageBanner v-if="shouldShowBanner" :config="bannerConfig" />
     <component
@@ -25,7 +27,7 @@ const { resolveSection } = useSectionRegistry()
 const { getSectionProps } = useSectionProps()
 
 const currentPage = computed(() =>
-  config.nav.find(item => item.path === route.path)
+  (config.nav ?? []).find(item => item.path === route.path)
 )
 
 const currentPageSections = computed(() =>
