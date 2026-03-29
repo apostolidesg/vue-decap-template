@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Superpowers working files (specs, brainstorm sessions — temporary, not for repo)
+.superpowers/
+docs/superpowers/

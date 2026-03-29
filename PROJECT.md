@@ -195,6 +195,21 @@ vue-decap-template/
 
 ---
 
+## Documentation policy
+
+Three permanent markdown files — no more:
+
+- `CLAUDE.md` — Claude Code auto-context. Read automatically every session.
+- `PROJECT.md` — architecture, decisions, current state. Single source of truth.
+- `STANDARDS.md` — coding conventions. Referenced during all code work.
+
+Design specs (`docs/superpowers/specs/`) are **working documents only** — written
+during brainstorming, used as input for the implementation plan, then deleted once
+the feature is built and the key decisions are folded back into this file.
+`docs/superpowers/` is gitignored — specs never accumulate in the repo.
+
+---
+
 ## Opening message for new conversations
 
 Paste this at the start of any new Claude conversation:
