@@ -81,10 +81,17 @@ Current content files:
 - useSectionRegistry — maps section name strings to async Vue components
 - useContactForm — form state, validation, Netlify Forms submission
 
-### Section rendering
-HomePage.vue renders sections dynamically from config.sections array.
-Adding/removing/reordering sections = one line change in client-config.js.
-Each section is an async component (code-split per section automatically).
+### Page & section rendering
+Every page is a nav entry in `client-config.js`. Each nav entry has a `sections`
+array controlling which sections render and in what order. The router maps all
+nav paths to a single `DynamicPage.vue` — no individual page files exist.
+
+`DynamicPage.vue` finds the current nav entry by route path, resolves sections
+via `useSectionRegistry` and `useSectionProps`, and renders a `PageBanner`
+at the top of inner pages (shown by default, disabled with `banner: false`).
+
+One-off pages outside the nav (e.g. privacy policy) are supported via
+`customRoutes` in config — each entry points to a custom `.vue` file in `src/pages/`.
 
 ### Nav labels
 Nav labels are locale-keyed objects in client-config.js:
@@ -123,6 +130,7 @@ Hidden static form in index.html for Netlify build-time detection.
 - Lucide icon registry
 - netlify.toml with SPA redirect rule
 - STANDARDS.md with full coding conventions
+- Config-driven multi-page routing — DynamicPage.vue, PageBanner.vue, sections in nav entries
 
 ### In progress 🔄
 - Bold theme stats card contrast issue (card blends into dark background)
@@ -169,7 +177,7 @@ vue-decap-template/
 │   │   └── sections/         # HeroSection, AboutSection, etc.
 │   ├── composables/          # useClientConfig, usePageContent, etc.
 │   ├── layouts/              # (planned — page layout wrappers)
-│   ├── pages/                # HomePage, AboutPage, etc.
+│   ├── pages/                # DynamicPage.vue, NotFoundPage.vue
 │   ├── router/               # Vue Router (config-driven)
 │   ├── themes/               # default.js, warm.js, bold.js
 │   └── utils/                # theme.js, i18n.js, image.js, icons.js
