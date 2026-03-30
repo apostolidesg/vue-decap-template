@@ -92,6 +92,27 @@ export function usePageContent() {
     items: tm('pricing.items'),
   }))
 
+  // --- Location Section Content ---
+  // hours is an array of objects — use tm() not t()
+  const locationContent = computed(() => ({
+    title: t('location.title'),
+    subtitle: t('location.subtitle'),
+    address: t('location.address'),
+    phone: t('location.phone'),
+    email: t('location.email'),
+    mapEmbedUrl: t('location.mapEmbedUrl'),
+    hours: tm('location.hours'),
+  }))
+
+  // --- CTA Banner Section Content ---
+  const ctaBannerContent = computed(() => ({
+    title: t('cta-banner.title'),
+    subtitle: t('cta-banner.subtitle'),
+    cta: t('cta-banner.cta'),
+    ctaLink: t('cta-banner.ctaLink'),
+    imageSrc: t('cta-banner.imageSrc'),
+  }))
+
   return {
     heroContent,
     aboutContent,
@@ -101,5 +122,7 @@ export function usePageContent() {
     contactContent,
     galleryContent,
     pricingContent,
+    locationContent,
+    ctaBannerContent,
   }
 }
