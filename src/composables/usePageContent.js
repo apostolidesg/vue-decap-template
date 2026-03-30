@@ -84,6 +84,14 @@ export function usePageContent() {
     items: tm('gallery.items'),
   }))
 
+  // --- Pricing Section Content ---
+  // items is an array of objects — use tm() not t()
+  const pricingContent = computed(() => ({
+    title: t('pricing.title'),
+    subtitle: t('pricing.subtitle'),
+    items: tm('pricing.items'),
+  }))
+
   return {
     heroContent,
     aboutContent,
@@ -92,5 +100,6 @@ export function usePageContent() {
     faqContent,
     contactContent,
     galleryContent,
+    pricingContent,
   }
 }
