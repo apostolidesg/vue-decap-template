@@ -2,7 +2,10 @@ import { createI18n } from 'vue-i18n'
 import { useClientConfig } from '@/composables/useClientConfig'
 
 // Sections that have their own content JSON file in /content/
-const contentSections = ['hero', 'about', 'services', 'testimonials', 'faq', 'contact', 'footer', 'gallery', 'pricing']
+const contentSections = [
+  'hero', 'about', 'services', 'testimonials', 'faq', 'contact', 'footer',
+  'gallery', 'pricing', 'location', 'cta-banner',
+]
 
 /**
  * Loads all section JSON files and builds a messages object per locale.
