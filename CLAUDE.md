@@ -37,13 +37,15 @@ Decap CMS, SCSS + CSS variables, Lucide Vue Next, Netlify
 
 ## Current state
 See PROJECT.md for full details. Short version:
-- All 6 sections built and working
+- All 10 sections built and working: Hero, About, Services, Testimonials, FAQ, Contact, Gallery, Pricing, Location, CtaBanner
 - 3 themes: default, warm, bold
 - Decap CMS working end to end
 - Netlify deployment working
 - Multi-page routing complete — all pages config-driven via DynamicPage.vue
-- Layout variants per section not built yet
+- Layout variants working: HeroSection (image-right, image-background, cinematic, video-background), GallerySection (grid, masonry), PricingSection (cards, menu), CtaBannerSection (default, image)
+- Scroll animations: useScrollAnimation (single), useStaggeredAnimation (lists)
 - Bold theme has a known stats card contrast issue (fix pending)
+- Email addresses in content/*.json must use `{'@'}` instead of `@` (vue-i18n linked-message escape)
 
 ## What NOT to do
 - Do not install new dependencies without confirming first

@@ -66,13 +66,19 @@ Decap CMS uses single_file i18n structure to read/write these files.
 vue-i18n loads them via src/utils/i18n.js which merges all section files per locale.
 
 Current content files:
-- content/hero.json
+- content/hero.json — title, subtitle, CTAs, imageSrc, imageAlt, videoSrc
 - content/about.json
 - content/services.json
 - content/testimonials.json
 - content/faq.json
 - content/contact.json
 - content/footer.json
+- content/gallery.json — title, subtitle, items (src, alt, caption)
+- content/pricing.json — title, subtitle, items (name, price, period, description, highlighted, cta, ctaLink, features[], category)
+- content/location.json — title, subtitle, address, phone, email, mapEmbedUrl, hours[]
+- content/cta-banner.json — title, subtitle, cta, ctaLink, imageSrc
+
+**Important:** Email addresses in content JSON must escape `@` as `{'@'}` — vue-i18n treats bare `@` as a linked-message prefix and will throw a compile error.
 
 ### Composables
 - useClientConfig — access to client-config.js (never import directly)
@@ -80,6 +86,8 @@ Current content files:
 - useSectionProps — maps section names to their component props
 - useSectionRegistry — maps section name strings to async Vue components
 - useContactForm — form state, validation, Netlify Forms submission
+- useScrollAnimation — IntersectionObserver fade-in for single elements (returns animationRef + CSS class fade-in)
+- useStaggeredAnimation — IntersectionObserver staggered fade-in for lists (returns containerRef + CSS class fade-in-stagger)
 
 ### Page & section rendering
 Every page is a nav entry in `client-config.js`. Each nav entry has a `sections`
@@ -118,7 +126,7 @@ Hidden static form in index.html for Netlify build-time detection.
 - vue-i18n with EN/EL JSON content
 - AppHeader (fixed, scrolled state, mobile hamburger, language switcher)
 - AppFooter (brand, contact info, copyright)
-- 6 section components: Hero, About, Services, Testimonials, FAQ, Contact
+- 10 section components: Hero, About, Services, Testimonials, FAQ, Contact, Gallery, Pricing, Location, CtaBanner
 - Dynamic section rendering from config
 - Responsive across all breakpoints (375px to 1440px)
 - Decap CMS wired up and working end to end
@@ -131,21 +139,23 @@ Hidden static form in index.html for Netlify build-time detection.
 - netlify.toml with SPA redirect rule
 - STANDARDS.md with full coding conventions
 - Config-driven multi-page routing — DynamicPage.vue, PageBanner.vue, sections in nav entries
+- Scroll animation composables: useScrollAnimation (single), useStaggeredAnimation (lists)
+- HeroSection layout variants: image-right, image-background, cinematic, video-background (MP4 autoplay with imageSrc fallback)
+- GallerySection layout variants: grid, masonry (with lightbox modal)
+- PricingSection layout variants: cards, menu
+- CtaBannerSection layout variants: default (primary color bg), image (full-bleed with overlay)
+- LocationSection: two-column info + Google Maps iframe embed (no API key), opening hours table
 
 ### In progress 🔄
 - Bold theme stats card contrast issue (card blends into dark background)
 - Warm theme not visually verified in browser yet
-- Layout variants per section not built yet (cinematic hero, editorial about etc.)
 
 ### Up next 📋
 1. Fix bold theme stats card contrast
 2. Verify warm theme visually in browser
-3. Add layout variants to sections (start with HeroSection: image-right, cinematic, split)
-4. Update client-config.js to support variant per section
-5. Build cinematic/luxury hero variant (for hotel/hospitality clients)
-6. Monthly maintenance retainer system planning
-7. README for how to spin up a new client site from this template
-8. Test with a mock client (clone, configure, deploy second site)
+3. Monthly maintenance retainer system planning
+4. README for how to spin up a new client site from this template
+5. Test with a mock client (clone, configure, deploy second site)
 
 ---
 
@@ -157,6 +167,8 @@ Hidden static form in index.html for Netlify build-time detection.
 - Every new theme must be visually verified against these components:
   language switcher, service card icons, contact detail icons,
   about stats card, testimonial avatars.
+- vue-i18n `@` escape: any `@` in content JSON (emails, social handles) must be
+  written as `{'@'}` — bare `@` triggers a linked-message compile error at runtime.
 
 ---
 
