@@ -5,7 +5,8 @@
     "primaryCta": "Get in Touch",
     "secondaryCta": "Learn More",
     "imageSrc": "",
-    "imageAlt": "Hero image"
+    "imageAlt": "Hero image",
+    "videoSrc": ""
   },
   "el": {
     "title": "Επαγγελματικές Υπηρεσίες που Εμπιστεύεστε",
@@ -13,6 +14,7 @@
     "primaryCta": "Επικοινωνήστε μαζί μας",
     "secondaryCta": "Μάθετε Περισσότερα",
     "imageSrc": "",
-    "imageAlt": "Κεντρική εικόνα"
+    "imageAlt": "Κεντρική εικόνα",
+    "videoSrc": ""
   }
 }

@@ -23,6 +23,7 @@ export function usePageContent() {
     secondaryCta: t('hero.secondaryCta'),
     secondaryCtaLink: '#about',
     imageAlt: t('hero.imageAlt'),
+    videoSrc: t('hero.videoSrc'),
   }))
 
   // --- About Section Content ---

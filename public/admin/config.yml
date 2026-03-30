@@ -27,6 +27,7 @@ collections:
           - { label: Secondary Button Text, name: secondaryCta, widget: string, i18n: true }
           - { label: Hero Image, name: imageSrc, widget: image, required: false, i18n: duplicate }
           - { label: Image Alt Text, name: imageAlt, widget: string, i18n: true }
+          - { label: Video Background URL, name: videoSrc, widget: file, required: false, i18n: duplicate, hint: "Optional: URL to a looping background video (.mp4 recommended)" }
           - label: "Layout"
             name: "layout"
             widget: "select"
@@ -35,6 +36,7 @@ collections:
             options:
               - { label: "Default (Image Right)", value: "image-right" }
               - { label: "Cinematic (Full-bleed, 100vh)", value: "cinematic" }
+              - { label: "Video Background", value: "video-background" }
 
       - name: about
         label: About Section
