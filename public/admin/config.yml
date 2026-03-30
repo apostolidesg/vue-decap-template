@@ -153,3 +153,30 @@ collections:
               - { label: Image, name: src, widget: image, i18n: duplicate }
               - { label: Alt Text, name: alt, widget: string, i18n: true }
               - { label: Caption, name: caption, widget: string, required: false, i18n: true }
+
+      - name: pricing
+        label: Pricing / Menu Section
+        i18n: true
+        file: content/pricing.json
+        fields:
+          - { label: Title, name: title, widget: string, i18n: true }
+          - { label: Subtitle, name: subtitle, widget: string, i18n: true }
+          - label: Items
+            name: items
+            widget: list
+            i18n: true
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Price, name: price, widget: string, hint: "e.g. €25 or €25/month" }
+              - { label: Period, name: period, widget: string, required: false, hint: "e.g. per month (for cards layout)" }
+              - { label: Description, name: description, widget: text, required: false }
+              - { label: Highlight this plan, name: highlighted, widget: boolean, default: false, required: false, hint: "Cards layout only: renders with primary background" }
+              - { label: CTA Button Text, name: cta, widget: string, required: false, hint: "Cards layout only" }
+              - { label: CTA Button Link, name: ctaLink, widget: string, required: false }
+              - label: Features
+                name: features
+                widget: list
+                required: false
+                hint: "Cards layout only: bullet list of features"
+                field: { label: Feature, name: feature, widget: string }
+              - { label: Category, name: category, widget: string, required: false, hint: "Menu layout only: groups items under this heading" }

@@ -31,6 +31,8 @@ export default {
         { id: "hero", component: "HeroSection", layout: "image-right" },
         // { id: "gallery", component: "GallerySection", layout: "grid" },
         // layout: 'grid' | 'masonry'
+        // { id: "pricing", component: "PricingSection", layout: "cards" },
+        // layout: 'cards' | 'menu'
         { id: "about", component: "AboutSection", layout: "default" },
         { id: "services", component: "ServicesSection", layout: "default" },
         { id: "testimonials", component: "TestimonialsSection", layout: "default" },
