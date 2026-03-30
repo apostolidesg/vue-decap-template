@@ -2,8 +2,20 @@
   <section
     class="hero"
     :class="[`hero--${layout}`]"
-    :style="isBackgroundLayout ? { backgroundImage: `url(${imageSrc})` } : {}"
+    :style="sectionStyle"
   >
+    <!-- Video background — only renders in video-background layout when videoSrc is set -->
+    <video
+      v-if="isVideoBackgroundLayout && videoSrc"
+      class="hero__video"
+      :src="videoSrc"
+      muted
+      autoplay
+      loop
+      playsinline
+      aria-hidden="true"
+    ></video>
+
     <div class="container hero__inner">
 
       <!-- Text Content -->
@@ -79,18 +91,34 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  // URL to a video file — used by the video-background layout variant only.
+  // Falls back to imageSrc if empty.
+  videoSrc: {
+    type: String,
+    default: '',
+  },
   // Controls the visual layout of the hero
-  // Options: 'image-right' | 'image-background' | 'cinematic'
+  // Options: 'image-right' | 'image-background' | 'cinematic' | 'video-background'
   layout: {
     type: String,
     default: 'image-right',
-    validator: (value) => ['image-right', 'image-background', 'cinematic'].includes(value),
+    validator: (value) =>
+      ['image-right', 'image-background', 'cinematic', 'video-background'].includes(value),
   },
 })
 
 // Computed flags to keep the template readable
 const isImageRightLayout = computed(() => props.layout === 'image-right')
 const isBackgroundLayout = computed(() => props.layout === 'image-background')
+const isVideoBackgroundLayout = computed(() => props.layout === 'video-background')
+
+// Background image style — used by both image-background and video-background (as fallback)
+const sectionStyle = computed(() => {
+  if (isBackgroundLayout.value || isVideoBackgroundLayout.value) {
+    return props.imageSrc ? { backgroundImage: `url(${props.imageSrc})` } : {}
+  }
+  return {}
+})
 </script>
 
 <style lang="scss" scoped>
@@ -263,6 +291,46 @@ const isBackgroundLayout = computed(() => props.layout === 'image-background')
       opacity: 0.8;
       max-width: none;
     }
+  }
+
+  // --- Video Background Layout ---
+  // Full-screen hero with an autoplaying video behind a dark overlay.
+  // Falls back to imageSrc as a background image if video is absent.
+  &--video-background {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+
+    // Dark overlay — opacity controlled by the --hero-overlay-opacity CSS variable
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, var(--hero-overlay-opacity, 0.5));
+      z-index: 1;
+    }
+
+    .hero__inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero__title,
+    .hero__subtitle {
+      color: var(--color-text-inverse);
+    }
+  }
+
+  // Video element — shared by video-background layout
+  &__video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
   }
 }
 </style>
