@@ -21,7 +21,7 @@ export default {
   // --- Navigation & Pages ---
   // Each nav entry defines a page.
   // banner: true (auto-title from label) | false (no banner) | { title: { en, el }, subtitle: { en, el } }
-  // sections[].layout: 'default' | 'image-right' | 'cinematic' | 'editorial'
+  // sections[].layout: 'default' | 'image-right' | 'image-background' | 'cinematic' | 'editorial' | 'video-background'
   nav: [
     {
       label: { en: "Home", el: "Αρχική" },
