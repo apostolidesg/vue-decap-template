@@ -76,6 +76,14 @@ export function usePageContent() {
     errorMessage: t('contact.errorMessage'),
   }))
 
+  // --- Gallery Section Content ---
+  // items is an array of objects — use tm() not t()
+  const galleryContent = computed(() => ({
+    title: t('gallery.title'),
+    subtitle: t('gallery.subtitle'),
+    items: tm('gallery.items'),
+  }))
+
   return {
     heroContent,
     aboutContent,
@@ -83,5 +91,6 @@ export function usePageContent() {
     testimonialsContent,
     faqContent,
     contactContent,
+    galleryContent,
   }
 }
