@@ -36,6 +36,9 @@ export function useSectionRegistry() {
     contact: defineAsyncComponent(() =>
       import('@/components/sections/ContactSection.vue')
     ),
+    gallery: defineAsyncComponent(() =>
+      import('@/components/sections/GallerySection.vue')
+    ),
   }
 
   /**

@@ -21,6 +21,7 @@ export function useSectionProps() {
     testimonialsContent,
     faqContent,
     contactContent,
+    galleryContent,
   } = usePageContent()
 
   // Placeholder hero image until client provides their own via CMS
@@ -83,6 +84,12 @@ export function useSectionProps() {
       sendButton: contactContent.value.sendButton,
       successMessage: contactContent.value.successMessage,
       errorMessage: contactContent.value.errorMessage,
+    },
+    gallery: {
+      title: galleryContent.value.title,
+      subtitle: galleryContent.value.subtitle,
+      items: galleryContent.value.items,
+      // layout comes from client-config.js sections array
     },
   }))
 
