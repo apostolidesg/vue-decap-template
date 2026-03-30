@@ -23,6 +23,8 @@ export function useSectionProps() {
     contactContent,
     galleryContent,
     pricingContent,
+    locationContent,
+    ctaBannerContent,
   } = usePageContent()
 
   // Placeholder hero image until client provides their own via CMS
@@ -96,6 +98,23 @@ export function useSectionProps() {
       title: pricingContent.value.title,
       subtitle: pricingContent.value.subtitle,
       items: pricingContent.value.items,
+      // layout comes from client-config.js sections array
+    },
+    location: {
+      title: locationContent.value.title,
+      subtitle: locationContent.value.subtitle,
+      address: locationContent.value.address,
+      phone: locationContent.value.phone,
+      email: locationContent.value.email,
+      mapEmbedUrl: locationContent.value.mapEmbedUrl,
+      hours: locationContent.value.hours,
+    },
+    'cta-banner': {
+      title: ctaBannerContent.value.title,
+      subtitle: ctaBannerContent.value.subtitle,
+      cta: ctaBannerContent.value.cta,
+      ctaLink: ctaBannerContent.value.ctaLink,
+      imageSrc: ctaBannerContent.value.imageSrc,
       // layout comes from client-config.js sections array
     },
   }))

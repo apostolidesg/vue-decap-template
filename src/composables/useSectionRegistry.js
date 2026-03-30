@@ -42,6 +42,12 @@ export function useSectionRegistry() {
     pricing: defineAsyncComponent(() =>
       import('@/components/sections/PricingSection.vue')
     ),
+    location: defineAsyncComponent(() =>
+      import('@/components/sections/LocationSection.vue')
+    ),
+    'cta-banner': defineAsyncComponent(() =>
+      import('@/components/sections/CtaBannerSection.vue')
+    ),
   }
 
   /**
