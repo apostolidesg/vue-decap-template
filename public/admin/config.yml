@@ -137,3 +137,19 @@ collections:
         file: content/footer.json
         fields:
           - { label: Copyright Text, name: rights, widget: string, i18n: true }
+
+      - name: gallery
+        label: Gallery Section
+        i18n: true
+        file: content/gallery.json
+        fields:
+          - { label: Title, name: title, widget: string, i18n: true }
+          - { label: Subtitle, name: subtitle, widget: string, i18n: true }
+          - label: Gallery Items
+            name: items
+            widget: list
+            i18n: true
+            fields:
+              - { label: Image, name: src, widget: image }
+              - { label: Alt Text, name: alt, widget: string, i18n: true }
+              - { label: Caption, name: caption, widget: string, required: false, i18n: true }
