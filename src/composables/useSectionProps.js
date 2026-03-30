@@ -22,6 +22,7 @@ export function useSectionProps() {
     faqContent,
     contactContent,
     galleryContent,
+    pricingContent,
   } = usePageContent()
 
   // Placeholder hero image until client provides their own via CMS
@@ -89,6 +90,12 @@ export function useSectionProps() {
       title: galleryContent.value.title,
       subtitle: galleryContent.value.subtitle,
       items: galleryContent.value.items,
+      // layout comes from client-config.js sections array
+    },
+    pricing: {
+      title: pricingContent.value.title,
+      subtitle: pricingContent.value.subtitle,
+      items: pricingContent.value.items,
       // layout comes from client-config.js sections array
     },
   }))

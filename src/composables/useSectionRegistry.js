@@ -39,6 +39,9 @@ export function useSectionRegistry() {
     gallery: defineAsyncComponent(() =>
       import('@/components/sections/GallerySection.vue')
     ),
+    pricing: defineAsyncComponent(() =>
+      import('@/components/sections/PricingSection.vue')
+    ),
   }
 
   /**
