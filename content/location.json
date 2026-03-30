@@ -1,20 +1,28 @@
 {
   "en": {
     "title": "Find Us",
-    "subtitle": "Where to find us",
-    "address": "",
-    "phone": "",
-    "email": "",
-    "mapEmbedUrl": "",
-    "hours": []
+    "subtitle": "Come visit us",
+    "address": "Meg. Spilaiou 23, Menemeni, Athens 115 22",
+    "phone": "+30 210 000 0000",
+    "email": "hello{'@'}myclientsite.com",
+    "mapEmbedUrl": "https://maps.google.com/maps?q=37.9903624,23.7568805&z=17&output=embed",
+    "hours": [
+      { "days": "Monday – Friday", "hours": "09:00 – 18:00" },
+      { "days": "Saturday", "hours": "10:00 – 14:00" },
+      { "days": "Sunday", "hours": "Closed" }
+    ]
   },
   "el": {
     "title": "Βρείτε μας",
-    "subtitle": "Πού να μας βρείτε",
-    "address": "",
-    "phone": "",
-    "email": "",
-    "mapEmbedUrl": "",
-    "hours": []
+    "subtitle": "Ελάτε να μας επισκεφθείτε",
+    "address": "Μεγ. Σπηλαίου 23, Μενεμένη, Αθήνα 115 22",
+    "phone": "+30 210 000 0000",
+    "email": "hello{'@'}myclientsite.com",
+    "mapEmbedUrl": "https://maps.google.com/maps?q=37.9903624,23.7568805&z=17&output=embed",
+    "hours": [
+      { "days": "Δευτέρα – Παρασκευή", "hours": "09:00 – 18:00" },
+      { "days": "Σάββατο", "hours": "10:00 – 14:00" },
+      { "days": "Κυριακή", "hours": "Κλειστά" }
+    ]
   }
 }

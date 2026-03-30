@@ -1,16 +1,16 @@
 {
   "en": {
-    "title": "Ready to get started?",
-    "subtitle": "Join hundreds of happy customers",
-    "cta": "Get in Touch",
+    "title": "Ready to work together?",
+    "subtitle": "Let's build something great. Get in touch and we'll figure out the rest.",
+    "cta": "Start a Project",
     "ctaLink": "#contact",
-    "imageSrc": ""
+    "imageSrc": "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1600&auto=format&fit=crop"
   },
   "el": {
-    "title": "Έτοιμοι να ξεκινήσετε;",
-    "subtitle": "Εγγραφείτε στους εκατοντάδες ευχαριστημένους πελάτες μας",
-    "cta": "Επικοινωνήστε μαζί μας",
+    "title": "Έτοιμοι να συνεργαστούμε;",
+    "subtitle": "Ας φτιάξουμε κάτι υπέροχο μαζί. Επικοινωνήστε μαζί μας και θα τα βρούμε.",
+    "cta": "Ξεκινήστε ένα Έργο",
     "ctaLink": "#contact",
-    "imageSrc": ""
+    "imageSrc": "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1600&auto=format&fit=crop"
   }
 }

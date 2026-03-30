@@ -1,12 +1,74 @@
 {
   "en": {
-    "title": "Our Gallery",
-    "subtitle": "A look at our work",
-    "items": []
+    "title": "Our Work",
+    "subtitle": "Portfolio",
+    "items": [
+      {
+        "src": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&auto=format&fit=crop",
+        "alt": "Modern office interior",
+        "caption": "Office Redesign — Athens"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1497366754035-f200581393dc?w=800&auto=format&fit=crop",
+        "alt": "Team collaboration",
+        "caption": "Strategy Workshop 2024"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&auto=format&fit=crop",
+        "alt": "Business meeting",
+        "caption": "Client Kickoff Meeting"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&auto=format&fit=crop",
+        "alt": "Creative workspace",
+        "caption": "Design Studio"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&auto=format&fit=crop",
+        "alt": "Presentation",
+        "caption": "Annual Review 2024"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=800&auto=format&fit=crop",
+        "alt": "Team photo",
+        "caption": "The Team"
+      }
+    ]
   },
   "el": {
-    "title": "Γκαλερί",
-    "subtitle": "Μια ματιά στη δουλειά μας",
-    "items": []
+    "title": "Οι Δουλειές μας",
+    "subtitle": "Χαρτοφυλάκιο",
+    "items": [
+      {
+        "src": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&auto=format&fit=crop",
+        "alt": "Σύγχρονο εσωτερικό γραφείου",
+        "caption": "Ανακαίνιση Γραφείου — Αθήνα"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1497366754035-f200581393dc?w=800&auto=format&fit=crop",
+        "alt": "Συνεργασία ομάδας",
+        "caption": "Εργαστήριο Στρατηγικής 2024"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&auto=format&fit=crop",
+        "alt": "Επαγγελματική συνάντηση",
+        "caption": "Εναρκτήρια Συνάντηση Πελάτη"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&auto=format&fit=crop",
+        "alt": "Δημιουργικός χώρος εργασίας",
+        "caption": "Στούντιο Σχεδιασμού"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&auto=format&fit=crop",
+        "alt": "Παρουσίαση",
+        "caption": "Ετήσια Αναθεώρηση 2024"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=800&auto=format&fit=crop",
+        "alt": "Φωτογραφία ομάδας",
+        "caption": "Η Ομάδα μας"
+      }
+    ]
   }
 }

@@ -69,6 +69,36 @@ export default {
         { id: "contact", component: "ContactSection", layout: "default" },
       ],
     },
+    {
+      label: { en: "Gallery", el: "Γκαλερί" },
+      path: "/gallery",
+      banner: false,
+      sections: [
+        { id: "hero", component: "HeroSection", layout: "image-background" },
+        { id: "gallery", component: "GallerySection", layout: "masonry" },
+        { id: "cta-banner", component: "CtaBannerSection", layout: "default" },
+      ],
+    },
+    {
+      label: { en: "Pricing", el: "Τιμές" },
+      path: "/pricing",
+      banner: false,
+      sections: [
+        { id: "hero", component: "HeroSection", layout: "video-background" },
+        { id: "pricing", component: "PricingSection", layout: "cards" },
+        { id: "cta-banner", component: "CtaBannerSection", layout: "image" },
+      ],
+    },
+    {
+      label: { en: "Location", el: "Τοποθεσία" },
+      path: "/location",
+      banner: false,
+      sections: [
+        { id: "hero", component: "HeroSection", layout: "image-background" },
+        { id: "location", component: "LocationSection" },
+        { id: "cta-banner", component: "CtaBannerSection", layout: "default" },
+      ],
+    },
   ],
 
   // --- One-off pages (not in nav) ---

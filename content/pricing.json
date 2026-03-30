@@ -1,12 +1,120 @@
 {
   "en": {
-    "title": "Our Pricing",
-    "subtitle": "Choose your plan",
-    "items": []
+    "title": "Simple, Transparent Pricing",
+    "subtitle": "Plans & Packages",
+    "items": [
+      {
+        "name": "Starter",
+        "price": "€499",
+        "period": "one-time",
+        "description": "Perfect for small businesses just getting started online.",
+        "highlighted": false,
+        "cta": "Get Started",
+        "ctaLink": "#contact",
+        "features": [
+          "5-page website",
+          "Mobile responsive",
+          "Contact form",
+          "Basic SEO setup",
+          "1 month support"
+        ],
+        "category": ""
+      },
+      {
+        "name": "Professional",
+        "price": "€999",
+        "period": "one-time",
+        "description": "The most popular choice for growing businesses.",
+        "highlighted": true,
+        "cta": "Get Started",
+        "ctaLink": "#contact",
+        "features": [
+          "10-page website",
+          "CMS integration",
+          "Blog or portfolio",
+          "Full SEO setup",
+          "Google Analytics",
+          "3 months support"
+        ],
+        "category": ""
+      },
+      {
+        "name": "Enterprise",
+        "price": "Custom",
+        "period": "",
+        "description": "Tailored solutions for larger organisations with specific needs.",
+        "highlighted": false,
+        "cta": "Let's Talk",
+        "ctaLink": "#contact",
+        "features": [
+          "Unlimited pages",
+          "Custom integrations",
+          "E-commerce ready",
+          "Priority support",
+          "Dedicated account manager",
+          "SLA guaranteed"
+        ],
+        "category": ""
+      }
+    ]
   },
   "el": {
-    "title": "Τιμές",
-    "subtitle": "Επιλέξτε πακέτο",
-    "items": []
+    "title": "Απλές, Διαφανείς Τιμές",
+    "subtitle": "Πακέτα & Τιμολόγηση",
+    "items": [
+      {
+        "name": "Starter",
+        "price": "€499",
+        "period": "εφάπαξ",
+        "description": "Ιδανικό για μικρές επιχειρήσεις που ξεκινούν online.",
+        "highlighted": false,
+        "cta": "Ξεκινήστε",
+        "ctaLink": "#contact",
+        "features": [
+          "Ιστοσελίδα 5 σελίδων",
+          "Responsive σχεδιασμός",
+          "Φόρμα επικοινωνίας",
+          "Βασικό SEO",
+          "Υποστήριξη 1 μήνα"
+        ],
+        "category": ""
+      },
+      {
+        "name": "Professional",
+        "price": "€999",
+        "period": "εφάπαξ",
+        "description": "Η πιο δημοφιλής επιλογή για αναπτυσσόμενες επιχειρήσεις.",
+        "highlighted": true,
+        "cta": "Ξεκινήστε",
+        "ctaLink": "#contact",
+        "features": [
+          "Ιστοσελίδα 10 σελίδων",
+          "Ενσωμάτωση CMS",
+          "Blog ή Portfolio",
+          "Πλήρες SEO",
+          "Google Analytics",
+          "Υποστήριξη 3 μηνών"
+        ],
+        "category": ""
+      },
+      {
+        "name": "Enterprise",
+        "price": "Κατ' αίτηση",
+        "period": "",
+        "description": "Προσαρμοσμένες λύσεις για μεγαλύτερους οργανισμούς.",
+        "highlighted": false,
+        "cta": "Μιλήστε μαζί μας",
+        "ctaLink": "#contact",
+        "features": [
+          "Απεριόριστες σελίδες",
+          "Custom ενσωματώσεις",
+          "E-commerce έτοιμο",
+          "Προτεραιότητα υποστήριξης",
+          "Αφοσιωμένος διαχειριστής",
+          "Εγγυημένο SLA"
+        ],
+        "category": ""
+      }
+    ]
   }
 }

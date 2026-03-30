@@ -4,17 +4,17 @@
     "subtitle": "We help businesses grow with modern, thoughtful solutions tailored to your unique needs.",
     "primaryCta": "Get in Touch",
     "secondaryCta": "Learn More",
-    "imageSrc": "",
-    "imageAlt": "Hero image",
-    "videoSrc": ""
+    "imageSrc": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&auto=format&fit=crop",
+    "imageAlt": "Modern office workspace",
+    "videoSrc": "/uploads/coffee-animation.mp4"
   },
   "el": {
     "title": "Επαγγελματικές Υπηρεσίες που Εμπιστεύεστε",
     "subtitle": "Βοηθάμε επιχειρήσεις να αναπτυχθούν με σύγχρονες, στοχευμένες λύσεις προσαρμοσμένες στις ανάγκες σας.",
     "primaryCta": "Επικοινωνήστε μαζί μας",
     "secondaryCta": "Μάθετε Περισσότερα",
-    "imageSrc": "",
-    "imageAlt": "Κεντρική εικόνα",
-    "videoSrc": ""
+    "imageSrc": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&auto=format&fit=crop",
+    "imageAlt": "Σύγχρονος χώρος εργασίας",
+    "videoSrc": "/uploads/coffee-animation.mp4"
   }
 }
