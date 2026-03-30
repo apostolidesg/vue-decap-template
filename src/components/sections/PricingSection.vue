@@ -16,7 +16,7 @@
       >
         <div
           v-for="(item, index) in items"
-          :key="index"
+          :key="item.name"
           class="pricing__card fade-in-stagger"
           :class="{ 'pricing__card--highlighted': item.highlighted }"
         >
@@ -64,11 +64,11 @@
           :key="group.category"
           class="pricing__menu-group"
         >
-          <h3 class="pricing__menu-category">{{ group.category }}</h3>
+          <h3 v-if="group.category" class="pricing__menu-category">{{ group.category }}</h3>
 
           <div
-            v-for="(item, index) in group.items"
-            :key="index"
+            v-for="(item, itemIndex) in group.items"
+            :key="`${item.name}-${item.price}`"
             class="pricing__menu-item"
           >
             <div class="pricing__menu-item-header">
@@ -129,7 +129,7 @@ const groupedMenuItems = computed(() => {
   if (props.layout !== 'menu') return []
   const groups = {}
   props.items.forEach((item) => {
-    const category = item.category || 'Menu'
+    const category = item.category || ''
     if (!groups[category]) groups[category] = []
     groups[category].push(item)
   })
