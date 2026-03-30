@@ -166,17 +166,18 @@ collections:
             widget: list
             i18n: true
             fields:
-              - { label: Name, name: name, widget: string }
-              - { label: Price, name: price, widget: string, hint: "e.g. €25 or €25/month" }
-              - { label: Period, name: period, widget: string, required: false, hint: "e.g. per month (for cards layout)" }
-              - { label: Description, name: description, widget: text, required: false }
-              - { label: Highlight this plan, name: highlighted, widget: boolean, default: false, required: false, hint: "Cards layout only: renders with primary background" }
-              - { label: CTA Button Text, name: cta, widget: string, required: false, hint: "Cards layout only" }
-              - { label: CTA Button Link, name: ctaLink, widget: string, required: false }
+              - { label: Name, name: name, widget: string, i18n: true }
+              - { label: Price, name: price, widget: string, i18n: duplicate, hint: "e.g. €25 or €25/month" }
+              - { label: Period, name: period, widget: string, required: false, i18n: true, hint: "e.g. per month (for cards layout)" }
+              - { label: Description, name: description, widget: text, required: false, i18n: true }
+              - { label: Highlight this plan, name: highlighted, widget: boolean, default: false, required: false, i18n: duplicate, hint: "Cards layout only: renders with primary background" }
+              - { label: CTA Button Text, name: cta, widget: string, required: false, i18n: true, hint: "Cards layout only" }
+              - { label: CTA Button Link, name: ctaLink, widget: string, required: false, i18n: duplicate }
               - label: Features
                 name: features
                 widget: list
                 required: false
+                i18n: true
                 hint: "Cards layout only: bullet list of features"
                 field: { label: Feature, name: feature, widget: string }
-              - { label: Category, name: category, widget: string, required: false, hint: "Menu layout only: groups items under this heading" }
+              - { label: Category, name: category, widget: string, required: false, i18n: true, hint: "Menu layout only: groups items under this heading" }
