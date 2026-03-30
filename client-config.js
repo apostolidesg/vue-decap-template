@@ -33,6 +33,9 @@ export default {
         // layout: 'grid' | 'masonry'
         // { id: "pricing", component: "PricingSection", layout: "cards" },
         // layout: 'cards' | 'menu'
+        // { id: "location", component: "LocationSection" },
+        // { id: "cta-banner", component: "CtaBannerSection", layout: "default" },
+        // layout for cta-banner: 'default' | 'image'
         { id: "about", component: "AboutSection", layout: "default" },
         { id: "services", component: "ServicesSection", layout: "default" },
         { id: "testimonials", component: "TestimonialsSection", layout: "default" },

@@ -181,3 +181,38 @@ collections:
                 hint: "Cards layout only: bullet list of features"
                 field: { label: Feature, name: feature, widget: string }
               - { label: Category, name: category, widget: string, required: false, i18n: true, hint: "Menu layout only: groups items under this heading" }
+
+      - name: location
+        label: Location Section
+        i18n: true
+        file: content/location.json
+        fields:
+          - { label: Title, name: title, widget: string, i18n: true }
+          - { label: Subtitle, name: subtitle, widget: string, i18n: true }
+          - { label: Address, name: address, widget: string, i18n: true }
+          - { label: Phone, name: phone, widget: string, i18n: duplicate }
+          - { label: Email, name: email, widget: string, i18n: duplicate }
+          - label: "Google Maps Embed URL"
+            name: mapEmbedUrl
+            widget: string
+            required: false
+            i18n: duplicate
+            hint: "Paste the src URL from Google Maps > Share > Embed a map"
+          - label: Opening Hours
+            name: hours
+            widget: list
+            i18n: true
+            fields:
+              - { label: Days, name: days, widget: string, hint: "e.g. Mon–Fri" }
+              - { label: Hours, name: hours, widget: string, hint: "e.g. 09:00–18:00 or Closed" }
+
+      - name: cta-banner
+        label: CTA Banner Section
+        i18n: true
+        file: content/cta-banner.json
+        fields:
+          - { label: Title, name: title, widget: string, i18n: true }
+          - { label: Subtitle, name: subtitle, widget: string, i18n: true }
+          - { label: Button Text, name: cta, widget: string, i18n: true }
+          - { label: Button Link, name: ctaLink, widget: string, i18n: duplicate, hint: "e.g. #contact or /contact" }
+          - { label: Background Image, name: imageSrc, widget: image, required: false, i18n: duplicate, hint: "Only used in the 'image' layout" }
