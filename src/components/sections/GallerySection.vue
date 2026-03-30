@@ -20,7 +20,7 @@
           :key="index"
           class="gallery__item fade-in-stagger"
           type="button"
-          :aria-label="`Open image ${index + 1}`"
+          :aria-label="item.alt ? `Open image: ${item.alt}` : `Open image ${index + 1}`"
           @click="openLightbox(index)"
         >
           <img
@@ -49,12 +49,13 @@
         @click.self="closeLightbox"
       >
         <button
+          ref="closeButtonRef"
           class="gallery__lightbox-close"
           type="button"
           aria-label="Close lightbox"
           @click="closeLightbox"
         >
-          ×
+          <span aria-hidden="true">×</span>
         </button>
 
         <button
@@ -63,7 +64,7 @@
           aria-label="Previous image"
           @click="prevImage"
         >
-          ‹
+          <span aria-hidden="true">‹</span>
         </button>
 
         <button
@@ -72,20 +73,20 @@
           aria-label="Next image"
           @click="nextImage"
         >
-          ›
+          <span aria-hidden="true">›</span>
         </button>
 
-        <div class="gallery__lightbox-content">
+        <div v-if="currentLightboxItem" class="gallery__lightbox-content">
           <img
-            :src="items[lightboxIndex].src"
-            :alt="items[lightboxIndex].alt || ''"
+            :src="currentLightboxItem.src"
+            :alt="currentLightboxItem.alt || ''"
             class="gallery__lightbox-image"
           />
           <p
-            v-if="items[lightboxIndex].caption"
+            v-if="currentLightboxItem.caption"
             class="gallery__lightbox-caption"
           >
-            {{ items[lightboxIndex].caption }}
+            {{ currentLightboxItem.caption }}
           </p>
         </div>
       </div>
@@ -94,7 +95,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, computed, nextTick, onMounted, onUnmounted } from 'vue'
 import { useStaggeredAnimation } from '@/composables/useScrollAnimation'
 
 const props = defineProps({
@@ -125,10 +126,17 @@ const { containerRef } = useStaggeredAnimation()
 // --- Lightbox state ---
 const isLightboxOpen = ref(false)
 const lightboxIndex = ref(0)
+const closeButtonRef = ref(null)
+
+// Derived from lightboxIndex — avoids repeated items[lightboxIndex] in template
+const currentLightboxItem = computed(() => props.items[lightboxIndex.value] ?? null)
 
 function openLightbox(index) {
   lightboxIndex.value = index
   isLightboxOpen.value = true
+  nextTick(() => {
+    closeButtonRef.value?.focus()
+  })
 }
 
 function closeLightbox() {
